@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+
+<!-- 
+##############################################################################
+#    Module : POS Cashiers
+#    Manage cashiers for Point Of Sale
+#    Author : Thierry Godin <thierry@lapinmoutardepommedauphine.com>
+#    Copyright (C) 2013 Thierry Godin 
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+##############################################################################
+-->
+
+<templates id="template" xml:space="preserve">
+
+    <!-- Cashiers drop-down list under NumPad -->
+    <t t-extend="PosWidget" >
+        <t t-jquery="footer" t-operation="replace">
+            <footer>
+            <div id="placeholder-GoToPayWidget"></div>
+            <div id="placeholder-NumpadWidget"></div>
+            <div id="AlertNoCashier">You must create at least one cashier!</div>
+            <div id="cashier-footer">
+                <div id="cashier-title">
+                    Select a cashier :            
+                </div>
+                <div id="cashier-frame">
+                    <t t-esc="widget.get_cashiers(widget.get_cur_pos_config_id())" />
+                    <select id="cashier-select" onclick="javascript:void(0)" >
+                    </select>   
+                </div>           
+            </div>
+        </footer>
+        </t>
+    </t>
+
+    <!-- Name of the cashier on Payement Page -->
+    <t t-extend="PaymentScreenWidget" >
+        <t t-jquery=".pos-step-container" t-operation="prepend">
+            <div id="pay-screen-cashier">Cashier : 
+                <span id="pay-screen-cashier-name">
+                </span>
+            </div>
+        </t>
+        <t t-jquery=".pos-step-container" t-operation="append">
+            <div id="placeholder-PaypadWidget"></div>
+        </t>
+    </t>
+
+    <!-- Name of the cashier on Ticket -->
+    <t t-extend="PosTicket" >
+        <t t-jquery=".pos-sale-ticket" t-operation="replace">
+            <div class="pos-sale-ticket">
+             <div id="header-ticket">
+                <t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
+                    Date.CultureInfo.formatPatterns.longTime)"/>
+                <br />
+                <t t-esc="widget.currentOrder.attributes.name"/>
+                <br />
+                Shop:  <t t-esc="widget.company.name"/><br />
+                <t t-esc="widget.shop_obj.name"/><br />
+                <t t-esc="widget.company.contact_address"/><br/>
+                Cashier : <span id="ticket-screen-cashier-name"></span>
+            </div>
+            <table>
+                <tr t-foreach="widget.currentOrderLines.toArray()" t-as="orderline">
+                    <td>
+                        <t t-esc="orderline.get_product().get('name')"/>
+                         <t t-if="orderline.get_discount() > 0">
+                            <div class="pos-disc-font">
+                                With a <t t-esc="orderline.get_discount()"/>% discount
+                            </div>
+                        </t>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.format_currency(orderline.get_display_price())"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr><td>Subtotal:</td><td class="pos-right-align">
+                    <t t-esc="widget.format_currency(widget.currentOrder.getSubtotal())"/>
+                    </td></tr>
+                <tr><td>Tax:</td><td class="pos-right-align">
+                    <t t-esc="widget.format_currency(widget.currentOrder.getTax())"/>
+                    </td></tr>
+                <tr><td>Discount:</td><td class="pos-right-align">
+                    <t t-esc="widget.format_currency(widget.currentOrder.getDiscountTotal())"/>
+                    </td></tr>
+                <tr class="emph"><td>Total:</td><td class="pos-right-align">
+                    <t t-esc="widget.format_currency(widget.currentOrder.getTotalTaxIncluded())"/>
+                    </td></tr>
+            </table>
+            <br />
+            <table>
+                <tr t-foreach="widget.currentPaymentLines.toArray()" t-as="pline">
+                    <td>
+                        <t t-esc="pline.get_cashregister().get('journal_id')[1]"/>
+                    </td>
+                    <td class="pos-right-align">
+                        <t t-esc="widget.format_currency(pline.get_amount())"/>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr><td>Change:</td><td class="pos-right-align">
+                    <t t-esc="widget.format_currency(widget.currentOrder.getPaidTotal() - widget.currentOrder.getTotalTaxIncluded())"/>
+                    </td></tr>
+            </table>
+        </div>
+        </t>
+    </t>
+
+    <t t-name="GoToPayWidget">
+        <div id="gotopay">
+        </div>
+    </t>
+
+    <t t-name="GoToPayButtonWidget">
+        <button class="gotopay-button">Payer</button>
+        <br />
+    </t>
+
+    <t t-name="PaypadButtonWidget">
+        <button class="paypad-button" t-att-cash-register-id="widget.cashRegister.get('id')">
+            <t t-esc="widget.cashRegister.get('journal').name"/>
+        </button> 
+    </t>
+
+</templates>

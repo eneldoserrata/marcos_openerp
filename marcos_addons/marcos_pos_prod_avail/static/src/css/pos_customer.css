@@ -1,0 +1,12 @@
+.point-of-sale .product .qty-tag {
+    position: absolute;
+    top: 25px;
+    right: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: #7f82ac;
+    padding: 2px 5px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px #9A9CC5, 0px 3px 0px #7E86AC, 0px 3px 3px rgba(12, 14, 68, 0.67);
+}

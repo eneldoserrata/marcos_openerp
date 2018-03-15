@@ -1,0 +1,2252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="True">
+        <record model='account.account.template' id='eym_account_account_1'>
+                <field name='code'>0</field>
+                <field name='name'>EYM Importadores SRL</field>
+                <field name='user_type' ref='data_account_type_view'/>
+                <field name='type'>view</field>
+                <field name='parent_id/id'></field>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_27'>
+                <field name='code'>1</field>
+                <field name='name'>Activos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_28'>
+                <field name='code'>10</field>
+                <field name='name'>Activos Corrientes</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_27'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_29'>
+                <field name='code'>1001</field>
+                <field name='name'>Efectivo en Cajas y Bancos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_28'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_30'>
+                <field name='code'>100101</field>
+                <field name='name'>Disponibilidad en Cajas</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_29'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_31'>
+                <field name='code'>10010101</field>
+                <field name='name'>Fondo de Caja Chica</field>
+                <field name='user_type' ref='data_account_type_cash'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_30'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_32'>
+                <field name='code'>10010102</field>
+                <field name='name'>Caja General</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_29'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_33'>
+                <field name='code'>1001010201</field>
+                <field name='name'>Cajas en RD$</field>
+                <field name='user_type' ref='data_account_type_cash'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_32'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_34'>
+                <field name='code'>1001010202</field>
+                <field name='name'>Cajas en monedas extranjeras</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_32'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_35'>
+                <field name='code'>100101020201</field>
+                <field name='name'>Cajas en US$</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_34'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_36'>
+                <field name='code'>10010102020101</field>
+                <field name='name'>Cajas en US$</field>
+                <field name='user_type' ref='data_account_type_cash'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_35'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_38'>
+                <field name='code'>10010102020102</field>
+                <field name='name'>Prima en Caja US$</field>
+                <field name='user_type' ref='data_account_type_cash'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_35'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_39'>
+                <field name='code'>100102</field>
+                <field name='name'>Efectivo en Bancos </field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_29'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_40'>
+                <field name='code'>10010201</field>
+                <field name='name'>Cuentas de Ahorro</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_39'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_41'>
+                <field name='code'>1001020101</field>
+                <field name='name'>Cuentas en RD$</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_40'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_42'>
+                <field name='code'>100102010101</field>
+                <field name='name'>COOPSEMUE</field>
+                <field name='user_type' ref='data_account_type_bank'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_41'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_43'>
+                <field name='code'>1001020102</field>
+                <field name='name'>Cuentas en Moneda extranjera</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_40'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_44'>
+                <field name='code'>10010202</field>
+                <field name='name'>Cuentas Corrientes</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_39'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_45'>
+                <field name='code'>1001020201</field>
+                <field name='name'>Cuentas en RD$</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_44'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_46'>
+                <field name='code'>100102020101</field>
+                <field name='name'>Banco Popular 54-78912-2</field>
+                <field name='user_type' ref='data_account_type_bank'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_45'/>
+        </record>
+        <record model='account.account.template' id='eym_account_account_48'>
+                <field name='code'>1001020202</field>
+                <field name='name'>Cuentas en Moneda extranjera</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_44'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_49'>
+                <field name='code'>10010203</field>
+                <field name='name'>Inversiones a corto plazo</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_39'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_50'>
+                <field name='code'>1002</field>
+                <field name='name'>Cuentas por Cobrar</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_28'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_51'>
+                <field name='code'>100201</field>
+                <field name='name'>Cuentas por Cobrar Clientes</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_50'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_52'>
+                <field name='code'>10020101</field>
+                <field name='name'>Cuentas por Cobrar Clientes en RD$</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_51'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_53'>
+                <field name='code'>10020102</field>
+                <field name='name'>Cuentas por Cobrar Clientes en Moneda Extranjera</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_51'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_54'>
+                <field name='code'>1002010201</field>
+                <field name='name'>Cuentas por Cobrar en US$</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_53'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_55'>
+                <field name='code'>100201020101</field>
+                <field name='name'>Cuentas por Cobrar en US$</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_54'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_56'>
+                <field name='code'>100201020102</field>
+                <field name='name'>Prima por Cobrar en US$</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_54'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_57'>
+                <field name='code'>10020103</field>
+                <field name='name'>Cuentas por Cobrar - Cheques Devueltos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_51'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_58'>
+                <field name='code'>1002010301</field>
+                <field name='name'>Cheques Devueltos </field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_57'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_59'>
+                <field name='code'>1002010302</field>
+                <field name='name'>Comisión por cheques devueltos</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_57'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_60'>
+                <field name='code'>10020104</field>
+                <field name='name'>Reservas para Cuentas Incobrables</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_51'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_61'>
+                <field name='code'>100202</field>
+                <field name='name'>Cuentas por Cobrar funcionarios y Empleados</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_50'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_62'>
+                <field name='code'>10020201</field>
+                <field name='name'>Prestamos </field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_61'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_63'>
+                <field name='code'>10020202</field>
+                <field name='name'>Seguro Familiar de Salud</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_61'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_64'>
+                <field name='code'>10020203</field>
+                <field name='name'>Plan de Pensiones</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_61'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1925'>
+                <field name='code'>10020299</field>
+                <field name='name'>Otras Cuentas por Cobrar Funcionarios y Empleados</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_61'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1926'>
+                <field name='code'>1002029901</field>
+                <field name='name'>Eneldo Antonio Serrata Peralta</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1925'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1927'>
+                <field name='code'>1002029902</field>
+                <field name='name'>Elmer Ismael Serrata Peralta</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1925'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1928'>
+                <field name='code'>100203</field>
+                <field name='name'>Cuentas por Cobrar Accionistas</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_50'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1929'>
+                <field name='code'>100204</field>
+                <field name='name'>Adelantos Suplidores</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_50'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1930'>
+                <field name='code'>10020401</field>
+                <field name='name'>Adelantos Suplidores</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1929'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1931'>
+                <field name='code'>100299</field>
+                <field name='name'>Otras Cuentas por Cobrar </field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_50'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1932'>
+                <field name='code'>10029901</field>
+                <field name='name'>Reclamaciones Bancarias</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1931'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1933'>
+                <field name='code'>10029902</field>
+                <field name='name'>Despacho Portuario</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1931'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1934'>
+                <field name='code'>10029903</field>
+                <field name='name'>Cardnet </field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1931'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1935'>
+                <field name='code'>10029904</field>
+                <field name='name'>Cardnet Bolivar</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1931'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1936'>
+                <field name='code'>10029999</field>
+                <field name='name'>Otras cuentas por cobrar</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1931'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1937'>
+                <field name='code'>1003</field>
+                <field name='name'>Inventario</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_28'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1938'>
+                <field name='code'>100301</field>
+                <field name='name'>Inventario en Transito</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1937'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1939'>
+                <field name='code'>100302</field>
+                <field name='name'>Inventario en Almacén</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1937'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1940'>
+                <field name='code'>100399</field>
+                <field name='name'>Reservas para obsolescencia de inventario</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1937'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1941'>
+                <field name='code'>1004</field>
+                <field name='name'>Gastos Pagados por Anticipado</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_28'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1942'>
+                <field name='code'>100401</field>
+                <field name='name'>Seguros Pagados por Anticipado</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1943'>
+                <field name='code'>100402</field>
+                <field name='name'>Dirección General de Impuestos Internos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_28'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1944'>
+                <field name='code'>10040201</field>
+                <field name='name'>Anticipos en I.S.R.</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1943'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1945'>
+                <field name='code'>10040202</field>
+                <field name='name'>ITBIS sobre Compra Locales</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1943'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1946'>
+                <field name='code'>10040203</field>
+                <field name='name'>ITBIS Pagado en Tarjeta Carnet</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1943'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1947'>
+                <field name='code'>10040204</field>
+                <field name='name'>ITBIS pagado en Importaciones</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1943'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1948'>
+                <field name='code'>100403</field>
+                <field name='name'>Comisión Carnet</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1949'>
+                <field name='code'>100404</field>
+                <field name='name'>A liquidar por NCF</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1950'>
+                <field name='code'>100405</field>
+                <field name='name'>Adelanto dividendos</field>
+                <field name='user_type' ref='data_account_type_receivable'/>
+                <field name='type'>receivable</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1951'>
+                <field name='code'>100406</field>
+                <field name='name'>Impuesto sobre la Renta Diferido-Activo    </field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1952'>
+                <field name='code'>100407</field>
+                <field name='name'>Promocion Rayaditos de Tropical</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1953'>
+                <field name='code'>100498</field>
+                <field name='name'>Cargos y Créditos por Liquidar</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1954'>
+                <field name='code'>100499</field>
+                <field name='name'>Otros Gastos Pagados por Anticipado</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1941'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1955'>
+                <field name='code'>11</field>
+                <field name='name'>Inversiones a largo Plazo</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_27'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1956'>
+                <field name='code'>12</field>
+                <field name='name'>Activos Fijos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_27'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1957'>
+                <field name='code'>1201</field>
+                <field name='name'>Terreno</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1958'>
+                <field name='code'>1202</field>
+                <field name='name'>Edificio</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1959'>
+                <field name='code'>1203</field>
+                <field name='name'>Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1960'>
+                <field name='code'>120301</field>
+                <field name='name'>Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1959'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1961'>
+                <field name='code'>120302</field>
+                <field name='name'>Deprec. Acumulada Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1959'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1962'>
+                <field name='code'>1204</field>
+                <field name='name'>Equipos de Cómputos y Telecomunicaciones</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1963'>
+                <field name='code'>120401</field>
+                <field name='name'>Equipos de Cómputos y Telecomunicaciones</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1962'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1964'>
+                <field name='code'>120402</field>
+                <field name='name'>Deprec. Acumulada Equipos de Cómputos y Telecomunicaciones</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1962'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1965'>
+                <field name='code'>1205</field>
+                <field name='name'>Equipos de Transporte</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1966'>
+                <field name='code'>120501</field>
+                <field name='name'>Equipos de Transporte Livianos</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1965'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1967'>
+                <field name='code'>120502</field>
+                <field name='name'>Deprec. Acumulada Equipos de Transporte Livianos</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1965'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1968'>
+                <field name='code'>120503</field>
+                <field name='name'>Equipos de Transporte Pesados</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1965'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1969'>
+                <field name='code'>120504</field>
+                <field name='name'>Deprec. Acumulada Equipos de Transporte Pesados</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1965'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1970'>
+                <field name='code'>1206</field>
+                <field name='name'>Maquinarias y Equipos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1971'>
+                <field name='code'>1207</field>
+                <field name='name'>Otros Activos Depreciables</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1972'>
+                <field name='code'>120701</field>
+                <field name='name'>Otros Activos Depreciables</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1971'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1973'>
+                <field name='code'>120702</field>
+                <field name='name'>Deprec. Acumulada Otros Activos Depreciables</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1971'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1974'>
+                <field name='code'>1208</field>
+                <field name='name'>Mejoras en Propiedad Arrendada</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1975'>
+                <field name='code'>120801</field>
+                <field name='name'>Mejoras en Propiedad Arrendada</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1974'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1976'>
+                <field name='code'>120802</field>
+                <field name='name'>Amortización Mejoras en Propiedad Arrendada</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1974'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1977'>
+                <field name='code'>1209</field>
+                <field name='name'>Activos Fijos en Proceso</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1956'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1978'>
+                <field name='code'>120901</field>
+                <field name='name'>Terreno en Proceso de Capitalización</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1979'>
+                <field name='code'>120902</field>
+                <field name='name'>Edificio en Proceso de Capitalización</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1980'>
+                <field name='code'>120903</field>
+                <field name='name'>Mobiliario y Equipos de Oficina en Proceso de Instalación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1981'>
+                <field name='code'>120904</field>
+                <field name='name'>Equipos de Cómputos y Telecom. en Proceso de Instalación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1982'>
+                <field name='code'>120905</field>
+                <field name='name'>Equipos de Transporte en Proceso de Liquidación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1983'>
+                <field name='code'>120906</field>
+                <field name='name'>Maquinarias y Equipos en Proceso de Instalación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1984'>
+                <field name='code'>120907</field>
+                <field name='name'>Otros Activos Depreciables en Proceso de Instalación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1977'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1985'>
+                <field name='code'>19</field>
+                <field name='name'>Otros Activos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_27'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1986'>
+                <field name='code'>1901</field>
+                <field name='name'>Gastos de Organización y Constitución</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1985'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1987'>
+                <field name='code'>1902</field>
+                <field name='name'>Depósitos en alquiler</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1985'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1988'>
+                <field name='code'>1903</field>
+                <field name='name'>Fianza Servicio Eléctrico</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1985'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1989'>
+                <field name='code'>1904</field>
+                <field name='name'>Obras de Arte</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1985'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1990'>
+                <field name='code'>1905</field>
+                <field name='name'>Patentes y Derechos de Explotación</field>
+                <field name='user_type' ref='data_account_type_asset'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_1985'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1991'>
+                <field name='code'>2</field>
+                <field name='name'>Pasivos</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1992'>
+                <field name='code'>20</field>
+                <field name='name'>Pasivos Corrientes</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1991'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1993'>
+                <field name='code'>2001</field>
+                <field name='name'>Documentos por Pagar a Corto Plazo</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1992'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1994'>
+                <field name='code'>200101</field>
+                <field name='name'>Porción corriente de Deuda a largo plazo</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_1993'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1995'>
+                <field name='code'>2002</field>
+                <field name='name'>Cuentas por Pagar</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1992'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1996'>
+                <field name='code'>200201</field>
+                <field name='name'>Cuentas por Pagar Suplidores</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1995'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1997'>
+                <field name='code'>20020101</field>
+                <field name='name'>Suplidores Locales</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1996'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1998'>
+                <field name='code'>2002010101</field>
+                <field name='name'>Suplidores Locales en RD$</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_1997'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_1999'>
+                <field name='code'>2002010102</field>
+                <field name='name'>Suplidores Locales en moneda extranjera</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1997'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2000'>
+                <field name='code'>200201010201</field>
+                <field name='name'>Suplidores Locales US$</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1999'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2001'>
+                <field name='code'>20020101020101</field>
+                <field name='name'>Suplidores Locales por Pagar US$</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2000'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2002'>
+                <field name='code'>20020101020102</field>
+                <field name='name'>Suplidores Locales Prima por Pagar US$</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2000'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2003'>
+                <field name='code'>20020102</field>
+                <field name='name'>Suplidores Internacionales</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1999'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2004'>
+                <field name='code'>2002010201</field>
+                <field name='name'>Cuentas por Pagar US$</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2003'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2005'>
+                <field name='code'>200201020101</field>
+                <field name='name'>Cuentas por Pagar US$</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2004'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2006'>
+                <field name='code'>200201020102</field>
+                <field name='name'>Prima por Pagar US$</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2004'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2007'>
+                <field name='code'>200202</field>
+                <field name='name'>Cuentas por Pagar Accionistas</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1995'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2008'>
+                <field name='code'>200203</field>
+                <field name='name'>Cuentas por Pagar Funcionarios y Empleados</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1995'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2009'>
+                <field name='code'>20020301</field>
+                <field name='name'>Sueldos y Salarios</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2010'>
+                <field name='code'>20020302</field>
+                <field name='name'>Comisiones Funcionarios y Empleados</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2011'>
+                <field name='code'>20020303</field>
+                <field name='name'>Salario de Navidad</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2012'>
+                <field name='code'>20020304</field>
+                <field name='name'>Bonificación</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2013'>
+                <field name='code'>20020305</field>
+                <field name='name'>Provisión para Preaviso y Cesantía</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2014'>
+                <field name='code'>20020306</field>
+                <field name='name'>Provisión para Vacaciones</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2015'>
+                <field name='code'>20020399</field>
+                <field name='name'>Otras Cuentas por Pagar Funcionarios y Empleados</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2008'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2016'>
+                <field name='code'>200204</field>
+                <field name='name'>Cuentas por Pagar al Estado Dominicano</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1995'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2017'>
+                <field name='code'>20020401</field>
+                <field name='name'>Tesorería de la Seguridad Social</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2016'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2018'>
+                <field name='code'>2002040101</field>
+                <field name='name'>Seguro Familiar de Salud (SFS)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2017'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2019'>
+                <field name='code'>2002040102</field>
+                <field name='name'>Administración Fondo de Pensiones (AFP)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2017'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2020'>
+                <field name='code'>2002040103</field>
+                <field name='name'>Administración Riesgos Laborales (ARL)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2017'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2021'>
+                <field name='code'>20020402</field>
+                <field name='name'>Dirección General de Impuestos Internos</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2017'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2022'>
+                <field name='code'>2002040201</field>
+                <field name='name'>ITBIS</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2023'>
+                <field name='code'>200204020101</field>
+                <field name='name'>ITBIS de Clientes por Pagar </field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2022'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2024'>
+                <field name='code'>200204020102</field>
+                <field name='name'>Retención a Personas Físicas (16%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2022'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2025'>
+                <field name='code'>200204020103</field>
+                <field name='name'>Retención a Sociedades (30% del 16%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2022'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2026'>
+                <field name='code'>2002040202</field>
+                <field name='name'>Retención I.S.R.</field>
+                <field name='user_type' ref='data_account_type_liability'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2027'>
+                <field name='code'>200204020201</field>
+                <field name='name'>Retención I.S.R. Empleados</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2028'>
+                <field name='code'>200204020202</field>
+                <field name='name'>Retención I.S.R. Alquileres (10%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2029'>
+                <field name='code'>200204020203</field>
+                <field name='name'>Retención I.S.R. Honorarios (10%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2030'>
+                <field name='code'>200204020204</field>
+                <field name='name'>Retención I.S.R. Dividendos (25%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2031'>
+                <field name='code'>200204020205</field>
+                <field name='name'>Retención I.S.R. Premios (1O%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2032'>
+                <field name='code'>200204020206</field>
+                <field name='name'>Retención I.S.R. Intereses al Exterior</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2033'>
+                <field name='code'>200204020207</field>
+                <field name='name'>Retención I.S.R. Remesa al Exterior (25%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2034'>
+                <field name='code'>200204020208</field>
+                <field name='name'>Otras Retenciones (2%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2026'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2035'>
+                <field name='code'>2002040203</field>
+                <field name='name'>Retribución Complementaria              </field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2036'>
+                <field name='code'>2002040204</field>
+                <field name='name'>Impuesto Sobre la Renta (25%)  </field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2037'>
+                <field name='code'>2002040205</field>
+                <field name='name'>Impuesto Sobre Activos (1%)</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2038'>
+                <field name='code'>2002040206</field>
+                <field name='name'>Impuesto de Fiscalización por Pagar</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2021'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2039'>
+                <field name='code'>20020403</field>
+                <field name='name'>Impuesto Sobre la Renta Diferido     </field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2016'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2040'>
+                <field name='code'>20020404</field>
+                <field name='name'>INFOTEP</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2016'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2041'>
+                <field name='code'>20020405</field>
+                <field name='name'>Cuenta por Pagar al Instituto Dominicano de Seguros Sociales</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2016'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2042'>
+                <field name='code'>20020499</field>
+                <field name='name'>Otras Retenciones y Acumulaciones por Pagar </field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2016'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2043'>
+                <field name='code'>200299</field>
+                <field name='name'>Otras Cuentas por Pagar a Corto Plazo</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1995'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2044'>
+                <field name='code'>20029901</field>
+                <field name='name'>Caja Chica</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2043'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2045'>
+                <field name='code'>20029902</field>
+                <field name='name'>Créditos por Devolución</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2043'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2046'>
+                <field name='code'>20029903</field>
+                <field name='name'>Cargos Bancarios por Pagar</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2043'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2047'>
+                <field name='code'>20029904</field>
+                <field name='name'>Comisiones de CarNet por Paga</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2043'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2048'>
+                <field name='code'>20029999</field>
+                <field name='name'>Otros Pasivos Misceláneos</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2043'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2049'>
+                <field name='code'>21</field>
+                <field name='name'>Pasivos a Largo Plazo</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1991'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2050'>
+                <field name='code'>2101</field>
+                <field name='name'>Documentos por Pagar a Largo Plazo</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2049'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2051'>
+                <field name='code'>29</field>
+                <field name='name'>Otros Pasivos </field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1991'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2052'>
+                <field name='code'>2901</field>
+                <field name='name'>Anticipos Clientes</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2051'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2053'>
+                <field name='code'>2999</field>
+                <field name='name'>Otras Cuentas por Pagar</field>
+                <field name='user_type' ref='data_account_type_payable'/>
+                <field name='type'>payable</field>
+                <field name='parent_id' ref='eym_account_account_2051'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2054'>
+                <field name='code'>3</field>
+                <field name='name'>Capital</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2055'>
+                <field name='code'>30</field>
+                <field name='name'>Capital Social Suscrito y Pagado</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2056'>
+                <field name='code'>31</field>
+                <field name='name'>Capital Adicional Pagado</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2057'>
+                <field name='code'>32</field>
+                <field name='name'>Acciones en Tesorería</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2058'>
+                <field name='code'>33</field>
+                <field name='name'>Reservas</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2059'>
+                <field name='code'>3301</field>
+                <field name='name'>Reserva Legal</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2058'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2060'>
+                <field name='code'>3302</field>
+                <field name='name'>Otras Reservas</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2058'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2061'>
+                <field name='code'>34</field>
+                <field name='name'>Resultado</field>
+                <field name='user_type' ref='account_type_liability_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2062'>
+                <field name='code'>3401</field>
+                <field name='name'>Resultado Acumulado</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2061'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2063'>
+                <field name='code'>3402</field>
+                <field name='name'>Resultado del Periodo</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2061'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2064'>
+                <field name='code'>3403</field>
+                <field name='name'>Ajustes a Resultados de Años Anteriores</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2061'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2065'>
+                <field name='code'>3499</field>
+                <field name='name'>Resumen de Ganancias y Pérdidas</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2061'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2066'>
+                <field name='code'>35</field>
+                <field name='name'>Superávit </field>
+                <field name='user_type' ref='data_account_type_liability'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2054'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2067'>
+                <field name='code'>3501</field>
+                <field name='name'>Superávit por Revaluación de Activos</field>
+                <field name='user_type' ref='conf_account_type_equity'/>
+                <field name='type'>liquidity</field>
+                <field name='parent_id' ref='eym_account_account_2066'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2068'>
+                <field name='code'>4</field>
+                <field name='name'>Ingresos</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2069'>
+                <field name='code'>40</field>
+                <field name='name'>Ingresos en Operaciones</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2068'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2070'>
+                <field name='code'>4001</field>
+                <field name='name'>Ventas de Contado</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2069'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2071'>
+                <field name='code'>4002</field>
+                <field name='name'>Ventas a Crédito</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2069'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2072'>
+                <field name='code'>4099</field>
+                <field name='name'>Otros Ingresos Operacionales</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2069'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2073'>
+                <field name='code'>41</field>
+                <field name='name'>Deducciones </field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2068'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2074'>
+                <field name='code'>4101</field>
+                <field name='name'>Descuentos Sobre Ventas</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2073'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2075'>
+                <field name='code'>410101</field>
+                <field name='name'>Descuentos Sobre Ventas</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2074'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2076'>
+                <field name='code'>4102</field>
+                <field name='name'>Devoluciones Sobre Ventas</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2073'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2077'>
+                <field name='code'>410201</field>
+                <field name='name'>Devoluciones sobre ventas</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2076'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2078'>
+                <field name='code'>47</field>
+                <field name='name'>Ingresos Financieros</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2068'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2079'>
+                <field name='code'>4701</field>
+                <field name='name'>Dividendos Ganados en Otras Compañías</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2080'>
+                <field name='code'>4702</field>
+                <field name='name'>Participación Patrimonial en Subcidiarias</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2081'>
+                <field name='code'>4703</field>
+                <field name='name'>Intereses Ganados en Certificados Financieros</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2082'>
+                <field name='code'>4704</field>
+                <field name='name'>Intereses Ganados en Bonos </field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2083'>
+                <field name='code'>4705</field>
+                <field name='name'>Intereses Ganados en Cuentas Corriente</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2084'>
+                <field name='code'>4706</field>
+                <field name='name'>Intereses Ganados en Cuentas de Ahorros</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2085'>
+                <field name='code'>4707</field>
+                <field name='name'>Ingresos por Venta de Inversiones</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2078'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2086'>
+                <field name='code'>48</field>
+                <field name='name'>Ganancia en Venta de Activos Fijos</field>
+                <field name='user_type' ref='account_type_asset_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2068'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2087'>
+                <field name='code'>4801</field>
+                <field name='name'>Ganancia en Venta de Terreno</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2088'>
+                <field name='code'>4802</field>
+                <field name='name'>Ganancia en Venta de Edificio</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2089'>
+                <field name='code'>4803</field>
+                <field name='name'>Ganancia en Venta de Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2090'>
+                <field name='code'>4804</field>
+                <field name='name'>Ganancia en Venta Equipos de Cómputos y Telecomunicaciones</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2091'>
+                <field name='code'>4805</field>
+                <field name='name'>Ganancia en Venta Equipos de Transporte</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2092'>
+                <field name='code'>4806</field>
+                <field name='name'>Ganancia en Venta Venta de Maquinarias y Equipos</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2093'>
+                <field name='code'>4807</field>
+                <field name='name'>Ganancia en Venta Venta de Otros Activos Fijos</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2086'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2094'>
+                <field name='code'>49</field>
+                <field name='name'>Ingresos Extraordinarios</field>
+                <field name='user_type' ref='account_type_income_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2068'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2095'>
+                <field name='code'>4901</field>
+                <field name='name'>Ganancia en Ajuste por Tipo de Cambio</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2094'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2096'>
+                <field name='code'>4902</field>
+                <field name='name'>Ingresos por Recuperación Cuentas Malas</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2094'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2097'>
+                <field name='code'>4903</field>
+                <field name='name'>Ingresos por Indemnización de Seguros</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2094'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2098'>
+                <field name='code'>4904</field>
+                <field name='name'>Ingresos de Años Anteriores</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2094'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2099'>
+                <field name='code'>4999</field>
+                <field name='name'>Otros Ingresos</field>
+                <field name='user_type' ref='data_account_type_income'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2094'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2100'>
+                <field name='code'>5</field>
+                <field name='name'>Costos</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2101'>
+                <field name='code'>50</field>
+                <field name='name'>Costos Ventas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2100'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2102'>
+                <field name='code'>51</field>
+                <field name='name'>Descuentos sobre Compras</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2100'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2103'>
+                <field name='code'>6</field>
+                <field name='name'>Gastos</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2104'>
+                <field name='code'>60</field>
+                <field name='name'>Gastos Generales y Administrativos</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2103'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2105'>
+                <field name='code'>6001</field>
+                <field name='name'>Gastos Funcionarios y Empleados</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2104'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2106'>
+                <field name='code'>600101</field>
+                <field name='name'>Salarios</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2107'>
+                <field name='code'>600102</field>
+                <field name='name'>Comisiones Funcionarios y Empleados</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2108'>
+                <field name='code'>600103</field>
+                <field name='name'>Incentivos y Horas Extras</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2109'>
+                <field name='code'>600104</field>
+                <field name='name'>Bonificación</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2110'>
+                <field name='code'>600105</field>
+                <field name='name'>Salario de Navidad</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2111'>
+                <field name='code'>600106</field>
+                <field name='name'>Vacaciones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2112'>
+                <field name='code'>600107</field>
+                <field name='name'>Preaviso y Cesantía</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2113'>
+                <field name='code'>600108</field>
+                <field name='name'>Compensación uso de vehículos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2114'>
+                <field name='code'>600109</field>
+                <field name='name'>Entrenamiento y Capacitación</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2115'>
+                <field name='code'>600110</field>
+                <field name='name'>Infotep</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2116'>
+                <field name='code'>600111</field>
+                <field name='name'>Aporte Plan Básico de Salud (SFS)</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2117'>
+                <field name='code'>600112</field>
+                <field name='name'>Aporte Plan de Pensiones (AFP)</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2118'>
+                <field name='code'>600113</field>
+                <field name='name'>Aporte Riesgos Laborales (ARL) </field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2119'>
+                <field name='code'>600114</field>
+                <field name='name'>Seguro Medico y de Vida Privado</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2120'>
+                <field name='code'>600115</field>
+                <field name='name'>Uniforme</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2121'>
+                <field name='code'>600116</field>
+                <field name='name'>Dietas y Viáticos a Empleados</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2122'>
+                <field name='code'>600117</field>
+                <field name='name'>Actividades Sociales Empleados</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2123'>
+                <field name='code'>600118</field>
+                <field name='name'>Gasto de Retribuciones Complementarias</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2124'>
+                <field name='code'>600119</field>
+                <field name='name'>Impuesto de Retribuciones Complementarias</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2125'>
+                <field name='code'>600199</field>
+                <field name='name'>Otros Beneficios Empleados</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2105'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2126'>
+                <field name='code'>6002</field>
+                <field name='name'>Otros Gastos de Ventas y Mercadeo</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2104'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2127'>
+                <field name='code'>600201</field>
+                <field name='name'>Agua, Luz y Basura</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2128'>
+                <field name='code'>600202</field>
+                <field name='name'>Telecomunicaciones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2129'>
+                <field name='code'>600203</field>
+                <field name='name'>Depreciación y Amortizaciones</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2130'>
+                <field name='code'>60020301</field>
+                <field name='name'>Depreciación Edificio</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2131'>
+                <field name='code'>60020302</field>
+                <field name='name'>Depreciación Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2132'>
+                <field name='code'>60020303</field>
+                <field name='name'>Depreciación Equipos de Cómputos y Telecomunicaciones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2133'>
+                <field name='code'>60020304</field>
+                <field name='name'>Depreciación Equipos de Transporte</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2134'>
+                <field name='code'>60020305</field>
+                <field name='name'>Depreciación Maquinarias y Equipos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2135'>
+                <field name='code'>60020306</field>
+                <field name='name'>Depreciación Otros Activos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2136'>
+                <field name='code'>60020307</field>
+                <field name='name'>Amortización Mejoras en Propiedad Arrendada</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2137'>
+                <field name='code'>60020308</field>
+                <field name='name'>Amortización Gastos de Organización y Constitución</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2138'>
+                <field name='code'>60020309</field>
+                <field name='name'>Amortización Patentes y Derechos de Explotación</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2129'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2139'>
+                <field name='code'>600204</field>
+                <field name='name'>Seguros Generales</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2140'>
+                <field name='code'>600205</field>
+                <field name='name'>Alquileres</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2141'>
+                <field name='code'>60020501</field>
+                <field name='name'>Alquiler de Locales </field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2140'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2142'>
+                <field name='code'>60020502</field>
+                <field name='name'>Alquiler de Equipos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2140'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2143'>
+                <field name='code'>60020503</field>
+                <field name='name'>Alquiler de Vehículos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2140'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2144'>
+                <field name='code'>60020504</field>
+                <field name='name'>Alquileres Generales</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2140'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2145'>
+                <field name='code'>600206</field>
+                <field name='name'>Honorarios por Servicios</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2146'>
+                <field name='code'>60020601</field>
+                <field name='name'>Honorarios por Servicios Profesionales Sociedades</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2145'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2147'>
+                <field name='code'>60020602</field>
+                <field name='name'>Honorarios por Servicios Profesionales Personas Físicas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2145'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2148'>
+                <field name='code'>60020603</field>
+                <field name='name'>Comisiones por Venta a Terceros Personas Físicas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2145'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2149'>
+                <field name='code'>600207</field>
+                <field name='name'>Transporte y Acarreo</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2150'>
+                <field name='code'>600208</field>
+                <field name='name'>Combustible y Lubricantes Vehículos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2151'>
+                <field name='code'>600209</field>
+                <field name='name'>Combustible Planta Eléctrica</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2152'>
+                <field name='code'>600210</field>
+                <field name='name'>Estadía Hoteles</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2153'>
+                <field name='code'>600211</field>
+                <field name='name'>Gastos por Cuentas Malas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2154'>
+                <field name='code'>600212</field>
+                <field name='name'>Reparaciones de Edificio</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2155'>
+                <field name='code'>600213</field>
+                <field name='name'>Reparaciones de Activos Fijos Categoría 2 y 3</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2156'>
+                <field name='code'>600214</field>
+                <field name='name'>Mantenimiento de Activos Fijos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2157'>
+                <field name='code'>600215</field>
+                <field name='name'>Promociones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2158'>
+                <field name='code'>600216</field>
+                <field name='name'>Publicidad</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2159'>
+                <field name='code'>600217</field>
+                <field name='name'>Viáticos y Representación</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2160'>
+                <field name='code'>600218</field>
+                <field name='name'>Patrocinio y aportes</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2161'>
+                <field name='code'>600219</field>
+                <field name='name'>Participación en concursos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2162'>
+                <field name='code'>600220</field>
+                <field name='name'>Material Gastable y Papelería</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2163'>
+                <field name='code'>600221</field>
+                <field name='name'>Material de Limpieza</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2164'>
+                <field name='code'>600222</field>
+                <field name='name'>Atenciones a Clientes</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2165'>
+                <field name='code'>600223</field>
+                <field name='name'>Gastos de Correo y Envíos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2166'>
+                <field name='code'>600224</field>
+                <field name='name'>Gastos Legales</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2167'>
+                <field name='code'>600225</field>
+                <field name='name'>Seguridad Electrónica</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2168'>
+                <field name='code'>600226</field>
+                <field name='name'>Guardianes y Vigilancia</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2169'>
+                <field name='code'>600227</field>
+                <field name='name'>Fumigación y Control de Plagas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2170'>
+                <field name='code'>600228</field>
+                <field name='name'>Suscripciones y Membresías</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2171'>
+                <field name='code'>600229</field>
+                <field name='name'>Donaciones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2172'>
+                <field name='code'>600230</field>
+                <field name='name'>Gastos de Representación</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2173'>
+                <field name='code'>600231</field>
+                <field name='name'>Pérdida por Obsolescencia de Inventarios</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2174'>
+                <field name='code'>600232</field>
+                <field name='name'>Pérdida en Venta de Inversiones</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2175'>
+                <field name='code'>600233</field>
+                <field name='name'>Pérdida en Venta de Activos Fijos</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2176'>
+                <field name='code'>60023301</field>
+                <field name='name'>Pérdida en Venta de Terreno</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2175'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2177'>
+                <field name='code'>60023302</field>
+                <field name='name'>Pérdida en Venta de Edificio</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2175'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2178'>
+                <field name='code'>60023303</field>
+                <field name='name'>Pérdida en Venta de Mobiliario y Equipos de Oficina</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2175'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2179'>
+                <field name='code'>60023304</field>
+                <field name='name'>Pérdida en Venta de Maquinarias y Equipos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2175'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2180'>
+                <field name='code'>60023305</field>
+                <field name='name'>Pérdida en Venta de Otros Activos Fijos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2175'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2181'>
+                <field name='code'>600234</field>
+                <field name='name'>Pérdida en Participación Patrimonial en Subsidiarias</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2182'>
+                <field name='code'>600235</field>
+                <field name='name'>Pérdida en Indemnización de Seguros</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2183'>
+                <field name='code'>600236</field>
+                <field name='name'>Consulta de Datos e Formación Crediticia</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2184'>
+                <field name='code'>600298</field>
+                <field name='name'>Gastos No Deducible ISR</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2185'>
+                <field name='code'>60029801</field>
+                <field name='name'>Impuesto de Fiscalización</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2186'>
+                <field name='code'>60029802</field>
+                <field name='name'>Retenciones de Impuesto sobre la Rentas Asumidas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2187'>
+                <field name='code'>60029803</field>
+                <field name='name'>Penalidades, Mora e Interés Indemnizatorios</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2188'>
+                <field name='code'>60029804</field>
+                <field name='name'>Gastos Sin Comprobantes No Admitidos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2189'>
+                <field name='code'>60029805</field>
+                <field name='name'>Gastos de Años Anteriores No Admitidos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2190'>
+                <field name='code'>60029899</field>
+                <field name='name'>Otros Gastos No Deducible ISR</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2184'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2191'>
+                <field name='code'>600299</field>
+                <field name='name'>Otros Gastos Generales y Administrativos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2126'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2280'>
+                <field name='code'>62</field>
+                <field name='name'>Gastos Financieros</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2103'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2281'>
+                <field name='code'>6201</field>
+                <field name='name'>Cargos Bancarios</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2280'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2282'>
+                <field name='code'>6202</field>
+                <field name='name'>Cargos Carnet</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2280'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2283'>
+                <field name='code'>6203</field>
+                <field name='name'>Pérdida en Ajuste por Tipo de Cambio</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2280'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2284'>
+                <field name='code'>6204</field>
+                <field name='name'>Intereses sobre Prestamos Bancarios</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2280'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2285'>
+                <field name='code'>6205</field>
+                <field name='name'>Intereses sobre Prestamos Particulares</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2280'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2286'>
+                <field name='code'>63</field>
+                <field name='name'>Impuestos sobre la Renta</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2103'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2287'>
+                <field name='code'>6301</field>
+                <field name='name'>Impuestos sobre la Renta Corrientes</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2288'>
+                <field name='code'>6302</field>
+                <field name='name'>Impuestos sobre Activos Corrientes</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2289'>
+                <field name='code'>6303</field>
+                <field name='name'>Impuestos Sobre la Renta Diferidos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2290'>
+                <field name='code'>6304</field>
+                <field name='name'>Crédito Fiscal por Retención de Dividendos</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2291'>
+                <field name='code'>6305</field>
+                <field name='name'>Impuestos de años anteriores</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2292'>
+                <field name='code'>6306</field>
+                <field name='name'>Impuestos sobre Activos de años anteriores</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2286'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2293'>
+                <field name='code'>7</field>
+                <field name='name'>Transferencia a Reserva</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_1'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2294'>
+                <field name='code'>70</field>
+                <field name='name'>Transferencia a Reserva</field>
+                <field name='user_type' ref='account_type_expense_view1'/>
+                <field name='type'>view</field>
+                <field name='parent_id' ref='eym_account_account_2293'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2295'>
+                <field name='code'>7001</field>
+                <field name='name'>Transferencia a Reserva Legal</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2294'/>
+        </record> 
+        <record model='account.account.template' id='eym_account_account_2296'>
+                <field name='code'>7002</field>
+                <field name='name'>Transferencia a Otras Reservas</field>
+                <field name='user_type' ref='data_account_type_expense'/>
+                <field name='type'>other</field>
+                <field name='parent_id' ref='eym_account_account_2294'/>
+        </record> 
+    </data>
+</openerp>

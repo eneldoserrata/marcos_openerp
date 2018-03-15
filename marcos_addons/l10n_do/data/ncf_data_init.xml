@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="sale.sale_shop_1" model="sale.shop">
+            <field name="fiscal_id" ref="account_journal_cf_credito_fiscal"></field>
+            <field name="final_id" ref="account_journal_cf_consumidor_final"></field>
+            <field name="especiales_id" ref="account_journal_cf_regimenes_especiales"></field>
+            <field name="gubernamentales_id" ref="account_journal_cf_regimenes_gubernamental"></field>
+            <field name="notas_credito_id" ref="account_journal_cf_nota_credito"></field>
+        </record>
+
+        <!--posiciones fiscales para account_chart_template_a account template-->
+        <record id="account_fp_chart_template_x_1" model="account.fiscal.position.template">
+            <field name="name">Para Crédito Fiscal</field>
+            <field name="fiscal_type">fiscal</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_2" model="account.fiscal.position.template">
+            <field name="name">Cosumidor Final</field>
+            <field name="fiscal_type">final</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_3" model="account.fiscal.position.template">
+            <field name="name">Gubernamental</field>
+            <field name="fiscal_type">gov</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_4" model="account.fiscal.position.template">
+            <field name="name">Regímenes Especiales</field>
+            <field name="fiscal_type">special</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <!---->
+
+        <record id="account_fp_chart_template_x_5" model="account.fiscal.position.template">
+            <field name="name">Gastos de personal</field>
+            <field name="fiscal_type">01</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_6" model="account.fiscal.position.template">
+            <field name="name">Gastos por trabajo, suministros y servicios</field>
+            <field name="fiscal_type">02</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_7" model="account.fiscal.position.template">
+            <field name="name">Arrendamientos</field>
+            <field name="fiscal_type">03</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_8" model="account.fiscal.position.template">
+            <field name="name">Gastos de Activos Fijos</field>
+            <field name="fiscal_type">04</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_9" model="account.fiscal.position.template">
+            <field name="name">Gastos de Representación</field>
+            <field name="fiscal_type">05</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_10" model="account.fiscal.position.template">
+            <field name="name">Otras Deducciones Admitidas</field>
+            <field name="fiscal_type">06</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_11" model="account.fiscal.position.template">
+            <field name="name">Gastos Financieros</field>
+            <field name="fiscal_type">07</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_12" model="account.fiscal.position.template">
+            <field name="name">Gastos Extraordinarios</field>
+            <field name="fiscal_type">08</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_13" model="account.fiscal.position.template">
+            <field name="name">Compras y Gastos que forman parte del Costo de Venta</field>
+            <field name="fiscal_type">09</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_14" model="account.fiscal.position.template">
+            <field name="name">Adquisiciones de Activos</field>
+            <field name="fiscal_type">10</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_15" model="account.fiscal.position.template">
+            <field name="name">Gastos de Seguro</field>
+            <field name="fiscal_type">11</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_16" model="account.fiscal.position.template">
+            <field name="name">Proveedores Informales</field>
+            <field name="fiscal_type">informal</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_x_17" model="account.fiscal.position.template">
+            <field name="name">Gastos Menores</field>
+            <field name="fiscal_type">minor</field>
+            <field name="chart_template_id" ref="account_chart_template_a"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+
+        <!--posiciones fiscales para account_chart_template_eym account template-->
+        <record id="account_fp_chart_template_eym_1" model="account.fiscal.position.template">
+            <field name="name">Para Crédito Fiscal</field>
+            <field name="fiscal_type">fiscal</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_2" model="account.fiscal.position.template">
+            <field name="name">Cosumidor Final</field>
+            <field name="fiscal_type">final</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_3" model="account.fiscal.position.template">
+            <field name="name">Gubernamental</field>
+            <field name="fiscal_type">gov</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_4" model="account.fiscal.position.template">
+            <field name="name">Regímenes Especiales</field>
+            <field name="fiscal_type">special</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="False"/>
+        </record>
+
+        <!---->
+
+        <record id="account_fp_chart_template_eym_5" model="account.fiscal.position.template">
+            <field name="name">01 - Gastos de personal</field>
+            <field name="fiscal_type">01</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_6" model="account.fiscal.position.template">
+            <field name="name">02 - Gastos por trabajo, suministros y servicios</field>
+            <field name="fiscal_type">02</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_7" model="account.fiscal.position.template">
+            <field name="name">03 - Arrendamientos</field>
+            <field name="fiscal_type">03</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_8" model="account.fiscal.position.template">
+            <field name="name">04 - Gastos de Activos Fijos</field>
+            <field name="fiscal_type">04</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_9" model="account.fiscal.position.template">
+            <field name="name">05 - Gastos de Representación</field>
+            <field name="fiscal_type">05</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_10" model="account.fiscal.position.template">
+            <field name="name">06 - Otras Deducciones Admitidas</field>
+            <field name="fiscal_type">06</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_11" model="account.fiscal.position.template">
+            <field name="name">07 - Gastos Financieros</field>
+            <field name="fiscal_type">07</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_12" model="account.fiscal.position.template">
+            <field name="name">08 - Gastos Extraordinarios</field>
+            <field name="fiscal_type">08</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_13" model="account.fiscal.position.template">
+            <field name="name">09 - Compras y Gastos que forman parte del Costo de Venta</field>
+            <field name="fiscal_type">09</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_14" model="account.fiscal.position.template">
+            <field name="name">10 - Adquisiciones de Activos</field>
+            <field name="fiscal_type">10</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+
+        <record id="account_fp_chart_template_eym_15" model="account.fiscal.position.template">
+            <field name="name">11 - Gastos de Seguro</field>
+            <field name="fiscal_type">11</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+            <field name="for_supplier" eval="True"/>
+        </record>
+    </data>
+</openerp>

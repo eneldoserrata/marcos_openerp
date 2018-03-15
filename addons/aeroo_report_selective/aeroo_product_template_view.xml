@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="aeroo_product_template_view_form" model="ir.ui.view">
+            <field name="name">Aeroo product template form</field>
+            <field name="model">aeroo.product.template</field>
+            <field name="arch" type="xml">
+
+                <form string="Aeroo product templates" version="7.0">
+                    <group>
+                        <field name="sequence" />
+                        <field name="name" />
+                        <field name="code" />
+                    </group>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="aeroo_product_template_view_tree" model="ir.ui.view">
+            <field name="name">Aeroo product template form</field>
+            <field name="model">aeroo.product.template</field>
+            <field name="arch" type="xml">
+
+                <tree string="Aeroo product templates" version="7.0">
+                    <field name="sequence" />
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="action_aeroo_product_template" model="ir.actions.act_window">
+            <field name="name">Aeroo product template</field>
+            <field name="res_model">aeroo.product.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="action_aeroo_product_template" id="menu_action_aeroo_product_template" parent="report_aeroo.menu_ir_action_aeroo_reports_xml"/>
+
+    </data>
+</openerp>

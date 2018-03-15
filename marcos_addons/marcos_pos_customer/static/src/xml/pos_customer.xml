@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="tr.header-row" t-operation="before">
+            <tr class="selection-area">
+                <td style="padding-top: 7px;">
+                    <span class='button_select' id="customer_link">
+                       <img src="/marcos_pos_customer/static/src/img/search_user.png" alt="Seleccionar cliente"></img>
+                        Buscar
+                       </span>
+                    <span class='button_select' id="create_link">
+                       <img src="/marcos_pos_customer/static/src/img/add_user.png" alt="Crear un nuevo cliente"></img>
+                        Nuevo
+                    </span>
+                    <span class='button_select' id="edit_link">
+                       <img src="/marcos_pos_customer/static/src/img/edit_user.png" alt="Editar cliente"></img>
+                        Editar
+                    </span>
+                    <span id="create_so" class='button_select'>
+                        <img src="/marcos_pos_customer/static/src/img/cotizar.png" alt="Crear cotización"></img>
+                        Cotización
+                    </span>
+	                <span class='button_select' id="sale_mode" style="background: blue;">
+	                   <img src="/marcos_pos_customer/static/src/img/facturar.png" alt="Facturar"></img>
+                        Factura
+	                </span>
+	                <span class='button_select' id="return_order">
+	                   <img src="/marcos_pos_customer/static/src/img/nc.png" alt="Devolución"></img>
+                        Devolucion
+	                </span>
+	                <span id="return_order_ref" style="color: #FFF;">
+	                </span>
+	            </td>
+	        </tr>
+        </t>
+    </t>
+    <t t-name="pos-return-order">
+	    <table align="center">
+	        <tr>
+	            <td>Ref. de la factura</td>
+	            <td style="padding-left: 5px;">
+	                <input type="text" name="return_order_number" id="return_order_number" value="" style="width: 180px;"/>
+	            </td>
+	        </tr>
+	    </table>
+	</t>
+	<t t-extend="PaymentScreenWidget">
+	    <t t-jquery="div.pos-step-container div.pos-payment-container div.footer" t-operation="replace">
+	        <div class="footer">
+	            <div class="infoline">
+	                <span class='left-block'>
+	                    Paid:
+	                </span>
+	                <span class='right-block' id="payment-paid-total"></span>
+	            </div>
+	            <div class="infoline">
+	                <span class='left-block'>
+	                    Remaining:
+	                </span>
+	                <span class='right-block' id="payment-remaining"></span>
+	            </div>
+	            <div class="infoline" >
+	                <span class='left-block'>
+	                    Change:
+	                </span>
+	                <span class='right-block' id="payment-change"></span>
+	            </div>
+	            <div class="infoline" >
+	                <span class='left-block'>
+	                    Reason:
+	                </span>
+	                <span class='right-block' style="vertical-align: top;" id="remark">
+	                    <textarea style="width: 100%;" rows="3" name='remark' id='pos-remark'></textarea>
+	                </span>
+	            </div>
+	        </div>
+	    </t>
+	</t>
+
+    <t t-extend="PosWidget">
+        <t t-jquery="div#branding img" t-operation="after">
+            <a style="margin-left: 10px; padding: 4px; text-decoration: none; font-size: 12px; margin-top: 5px; position: absolute; border: 1px solid #AAA;" 
+                id="assign_serial" href="javascript:void(0)" class="button">+ S/N</a>
+            <a style="margin-left: 56px; padding: 4px; text-decoration: none; font-size: 12px; margin-top: 5px; position: absolute; border: 1px solid #AAA;"
+                id="clear_serial" href="javascript:void(0)" class="button">
+                - S/N
+            </a>
+        </t>
+    </t>
+
+    <t t-name="pos-assign_serial">
+        <table align="center">
+            <tr>
+                <td>Serial No. </td>
+                <td style="padding-left: 5px;">
+                    <input type="text" name="pos_serial" id="pos_serial" value="" style="width: 180px;"/>
+                </td>
+            </tr>
+        </table>
+    </t>
+    <t t-extend="OrderlineWidget">
+        <t t-jquery="ul.info-list" t-operation="replace">
+            <ul class="info-list">
+                <t t-if="widget.model.get_quantity_str() !== '1'">
+                    <li class="info">
+                        <em>
+                            <t t-esc="widget.model.get_quantity_str()" />
+                        </em>
+                        <t t-esc="widget.model.get_unit().name" />
+                        at
+                        <t t-esc="widget.format_currency(widget.model.get_unit_price())" />
+                        /
+                        <t t-esc="widget.model.get_unit().name" />
+                    </li>
+                </t>
+                <t t-if="widget.model.get_serial() != null">
+                    <li class="info">
+                        Serial No: 
+                        <em>
+                            <t t-esc="widget.model.get_serial()" />
+                        </em>
+                    </li>
+                </t>
+                <t t-if="widget.model.get_discount_str() !== '0'">
+                    <li class="info">
+                        With a 
+                        <em>
+                            <t t-esc="widget.model.get_discount_str()" />%
+                        </em>
+                        discount
+                    </li>
+                </t>
+            </ul>
+        </t>
+    </t>
+    <t t-extend="HeaderButtonWidget">
+        <t t-jquery="div.header-button" t-operation="replace">
+            <div class="header-button" style="margin: 0px;">
+                <t t-esc="widget.label" />
+            </div>
+        </t>
+    </t>
+    <t t-extend="OrderButtonWidget">
+        <t t-jquery="li.order-selector-button" t-operation="replace">
+            <li class="order-selector-button">
+                <button class="select-order"><t t-esc="(widget.order.get_client() ? widget.order.get_client()+' : ':'') + widget.order.get('creationDate').toString('t')"/></button>
+            </li>
+        </t>
+    </t>
+    <t t-extend="PosTicket">
+	    <t t-jquery="div.pos-sale-ticket" t-operation="replace">
+	        <div class="pos-sale-ticket">
+	            <div class="pos-right-align"><t t-esc="new Date().toString(Date.CultureInfo.formatPatterns.shortDate + ' ' +
+	                Date.CultureInfo.formatPatterns.longTime)"/> <t t-esc="widget.currentOrder.getName()"/></div>
+	            <br />
+	            <t t-esc="widget.company.name"/><br />
+	            Phone: <t t-esc="widget.company.phone || ''"/><br />
+	            User: <t t-esc="widget.user.name"/><br />
+	            Shop: <t t-esc="widget.shop_obj.name"/><br />
+	            Customer Name: <t t-esc="widget.currentOrder.get_client_name()"/><br/>
+	            <br />
+	            <table>
+	                <colgroup>
+	                    <col width='50%' />
+	                    <col width='25%' />
+	                    <col width='25%' />
+	                </colgroup>
+	                <tr t-foreach="widget.currentOrderLines.toArray()" t-as="orderline">
+	                    <td>
+	                        <t t-esc="orderline.get_product().get('name')"/>
+	                        <t t-if="orderline.get_serial()">
+	                            <div class="pos-disc-font">
+	                                Serial: <t t-esc="orderline.get_serial()"/>
+	                            </div>
+	                        </t>
+	                        <t t-if="orderline.get_discount() > 0">
+	                            <div class="pos-disc-font">
+	                                With a <t t-esc="orderline.get_discount()"/>% discount
+	                            </div>
+	                        </t>
+	                    </td>
+	                    <td class="pos-right-align">
+	                        <t t-if="orderline.get_oid()">
+	                            -<t t-esc="orderline.get_quantity_str_with_unit()"/>
+	                        </t>
+	                        <t t-if="!orderline.get_oid()">
+	                            <t t-esc="orderline.get_quantity_str_with_unit()"/>
+	                        </t>
+	                    </td>
+	                    <td class="pos-right-align">
+	                        <t t-if="orderline.get_oid()">
+	                            -<t t-esc="widget.format_currency(orderline.get_display_price())"/>
+	                        </t>
+	                        <t t-if="!orderline.get_oid()">
+	                            <t t-esc="widget.format_currency(orderline.get_display_price())"/>
+	                        </t>
+	                    </td>
+	                </tr>
+	            </table>
+	            <br />
+	            <table>
+	                <tr><td>Subtotal:</td><td class="pos-right-align">
+	                    <t t-if="widget.currentOrder.get_ret_o_id()">
+	                        -<t t-esc="widget.format_currency(widget.currentOrder.getSubtotal())"/>
+	                    </t>
+	                    <t t-if="!widget.currentOrder.get_ret_o_id()">
+	                        <t t-esc="widget.format_currency(widget.currentOrder.getSubtotal())"/>
+	                    </t>
+	                    </td></tr>
+	                <tr><td>Tax:</td><td class="pos-right-align">
+	                    <t t-esc="widget.format_currency(widget.currentOrder.getTax())"/>
+	                    </td></tr>
+	                <tr><td>Discount:</td><td class="pos-right-align">
+	                    <t t-esc="widget.format_currency(widget.currentOrder.getDiscountTotal())"/>
+	                    </td></tr>
+	                <tr class="emph"><td>Total:</td><td class="pos-right-align">
+	                    <t t-if="widget.currentOrder.get_ret_o_id()">
+	                        -<t t-esc="widget.format_currency(widget.currentOrder.getTotalTaxIncluded())"/>
+	                    </t>
+	                    <t t-if="!widget.currentOrder.get_ret_o_id()">
+	                        <t t-esc="widget.format_currency(widget.currentOrder.getTotalTaxIncluded())"/>
+	                    </t>
+	                    </td></tr>
+	            </table>
+	            <br />
+	            <table>
+	                <tr t-foreach="widget.currentPaymentLines.toArray()" t-as="pline">
+	                    <td>
+	                        <t t-esc="pline.get_cashregister().get('journal_id')[1]"/>
+	                    </td>
+	                    <td class="pos-right-align">
+	                        <t t-if="widget.currentOrder.get_ret_o_id()">
+	                            -<t t-esc="widget.format_currency(pline.get_amount())"/>
+	                        </t>
+	                        <t t-if="!widget.currentOrder.get_ret_o_id()">
+	                            <t t-esc="widget.format_currency(pline.get_amount())"/>
+	                        </t>
+	                    </td>
+	                </tr>
+	            </table>
+	            <br />
+	            <table>
+	                <tr><td>Change:</td><td class="pos-right-align">
+	                    <t t-esc="widget.format_currency(widget.currentOrder.getPaidTotal() - widget.currentOrder.getTotalTaxIncluded())"/>
+	                    </td></tr>
+	            </table><br/>
+	            <div id="barcode1" width="280" height="80"/>
+	        </div>
+	    </t>
+	</t>
+</templates>

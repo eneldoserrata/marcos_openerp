@@ -1,0 +1,48 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* resource_planning
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-28 11:54+0000\n"
+"PO-Revision-Date: 2013-05-28 11:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: resource_planning
+#: model:ir.model,name:resource_planning.model_resource_planning
+msgid "resource.planning"
+msgstr "resource.planning"
+
+#. module: resource_planning
+#: code:addons/resource_planning/resource_planning.py:156
+#, python-format
+msgid "%s cannot be booked at %s!"
+msgstr "%s kan niet op worden geboekt %s!"
+
+#. module: resource_planning
+#: code:addons/resource_planning/resource_planning.py:136
+#: code:addons/resource_planning/resource_planning.py:156
+#: code:addons/resource_planning/resource_planning.py:171
+#, python-format
+msgid "Error"
+msgstr "Fout"
+
+#. module: resource_planning
+#: code:addons/resource_planning/resource_planning.py:171
+#, python-format
+msgid "%s cannot be booked at %s"
+msgstr "%s kan niet op worden geboekt %s"
+
+#. module: resource_planning
+#: code:addons/resource_planning/resource_planning.py:136
+#, python-format
+msgid "%s can only be booked %d time(s) in the same period!"
+msgstr "%s kan alleen geboekt worden %d time(s) in dezelfde periode!"
+

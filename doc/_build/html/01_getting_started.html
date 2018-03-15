@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting started with OpenERP development &#8212; OpenERP Server Developers Documentation 7.0b documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '7.0b',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architecture" href="02_architecture.html" />
+    <link rel="prev" title="OpenERP Server Developers Documentation" href="index.html" />
+   
+  
+  <link media="only screen and (max-device-width: 480px)" href="_static/small_flask.css" type= "text/css" rel="stylesheet" />
+
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="02_architecture.html" title="Architecture"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OpenERP Server Developers Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenERP Server Developers Documentation 7.0b documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started-with-openerp-development">
+<h1>Getting started with OpenERP development<a class="headerlink" href="#getting-started-with-openerp-development" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="installation-from-sources">
+<h2>Installation from sources<a class="headerlink" href="#installation-from-sources" title="Permalink to this headline">¶</a></h2>
+<p id="getting-started-installation-source-link">Source code is hosted on <a class="reference external" href="https://launchpad.net/">Launchpad</a>. In order to get the sources, you
+will need <a class="reference external" href="http://bazaar.canonical.com/en/">Bazaar</a> to pull the source from Launchpad. Bazaar is a
+version control system that helps you track project history over time
+and collaborate efficiently. You may have to create an account on
+Launchpad to be able to collaborate on OpenERP development. Please
+refer to the Launchpad and Bazaar documentation to install and setup
+your development environment.</p>
+<p>The running example of this section is based on an Ubuntu
+environment. You may have to adapt the steps according to your
+system. Once your working environment is ready, prepare a working
+directory that will contain the sources.  For a <code class="docutils literal"><span class="pre">source</span></code> base
+directory, type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">source</span><span class="p">;</span><span class="n">cd</span> <span class="n">source</span>
+</pre></div>
+</div>
+<p>OpenERP provides a setup script that automatizes the tasks of creating
+a shared repository and getting the source code. Get the setup script
+of OpenERP by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzr</span> <span class="n">cat</span> <span class="o">-</span><span class="n">d</span> <span class="n">lp</span><span class="p">:</span><span class="o">~</span><span class="n">openerp</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">openerp</span><span class="o">-</span><span class="n">tools</span><span class="o">/</span><span class="n">trunk</span> <span class="n">setup</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sh</span>
+</pre></div>
+</div>
+<p>This will create the following two files in your <code class="docutils literal"><span class="pre">source</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">5465</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">05</span> <span class="n">Makefile</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span>  <span class="mi">1</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">2902</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">05</span> <span class="n">Makefile_helper</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>If you want some help about the available options, please type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">help</span>
+</pre></div>
+</div>
+<p>Next step is to initialize the shared repository and download the
+sources. Get the current trunk version of OpenERP by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">init</span><span class="o">-</span><span class="n">trunk</span>
+</pre></div>
+</div>
+<p>This will create the following structure inside your <code class="docutils literal"><span class="pre">source</span></code>
+directory, and fetch the latest source code from <code class="docutils literal"><span class="pre">trunk</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">4096</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">10</span> <span class="n">addons</span>
+<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">4096</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">10</span> <span class="n">misc</span>
+<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">4096</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">10</span> <span class="n">server</span>
+<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">3</span> <span class="n">openerp</span> <span class="n">openerp</span> <span class="mi">4096</span> <span class="mi">2012</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">10</span> <span class="n">web</span>
+</pre></div>
+</div>
+<p>Some dependencies are necessary to use OpenERP. Depending on your
+environment, you might have to install the following packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">ghostscript</span> <span class="n">postgresql</span><span class="o">-</span><span class="n">client</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">dateutil</span> <span class="n">python</span><span class="o">-</span><span class="n">feedparser</span> <span class="n">python</span><span class="o">-</span><span class="n">gdata</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">ldap</span> <span class="n">python</span><span class="o">-</span><span class="n">libxslt1</span> <span class="n">python</span><span class="o">-</span><span class="n">lxml</span> <span class="n">python</span><span class="o">-</span><span class="n">mako</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">openid</span> <span class="n">python</span><span class="o">-</span><span class="n">psycopg2</span> <span class="n">python</span><span class="o">-</span><span class="n">pybabel</span> <span class="n">python</span><span class="o">-</span><span class="n">pychart</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">pydot</span> <span class="n">python</span><span class="o">-</span><span class="n">pyparsing</span> <span class="n">python</span><span class="o">-</span><span class="n">reportlab</span> <span class="n">python</span><span class="o">-</span><span class="n">simplejson</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">tz</span> <span class="n">python</span><span class="o">-</span><span class="n">vatnumber</span> <span class="n">python</span><span class="o">-</span><span class="n">vobject</span> <span class="n">python</span><span class="o">-</span><span class="n">webdav</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">werkzeug</span> <span class="n">python</span><span class="o">-</span><span class="n">xlwt</span> <span class="n">python</span><span class="o">-</span><span class="n">yaml</span> <span class="n">python</span><span class="o">-</span><span class="n">imaging</span> \
+          <span class="n">python</span><span class="o">-</span><span class="n">matplotlib</span>
+</pre></div>
+</div>
+<p>Next step is to initialize the database. This will create a new openerp role:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">db</span><span class="o">-</span><span class="n">setup</span>
+</pre></div>
+</div>
+<p>Finally, launch the OpenERP server:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">server</span>
+</pre></div>
+</div>
+<p>Testing your installation can be done on <a class="reference external" href="http://localhost:8069/">http://localhost:8069/</a>. You
+should see the OpenERP main login page.</p>
+</div>
+<div class="section" id="command-line-options">
+<h2>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<p>Using the command</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">openerp</span><span class="o">-</span><span class="n">server</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<div class="section" id="general-options">
+<h3>General Options<a class="headerlink" href="#general-options" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">version</span>                           <span class="n">show</span> <span class="n">program</span> <span class="n">version</span> <span class="n">number</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>                          <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">-</span><span class="n">c</span> <span class="n">CONFIG</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span>          <span class="n">specify</span> <span class="n">alternate</span> <span class="n">config</span> <span class="n">file</span>
+<span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">save</span>                          <span class="n">save</span> <span class="n">configuration</span> <span class="n">to</span> <span class="o">~/.</span><span class="n">terp_serverrc</span>
+<span class="o">-</span><span class="n">v</span><span class="p">,</span> <span class="o">--</span><span class="n">verbose</span>                       <span class="n">enable</span> <span class="n">debugging</span>
+<span class="o">--</span><span class="n">pidfile</span><span class="o">=</span><span class="n">PIDFILE</span>                   <span class="n">file</span> <span class="n">where</span> <span class="n">the</span> <span class="n">server</span> <span class="n">pid</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stored</span>
+<span class="o">--</span><span class="n">logfile</span><span class="o">=</span><span class="n">LOGFILE</span>                   <span class="n">file</span> <span class="n">where</span> <span class="n">the</span> <span class="n">server</span> <span class="n">log</span> <span class="n">will</span> <span class="n">be</span> <span class="n">stored</span>
+<span class="o">-</span><span class="n">n</span> <span class="n">INTERFACE</span><span class="p">,</span> <span class="o">--</span><span class="n">interface</span><span class="o">=</span><span class="n">INTERFACE</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">TCP</span> <span class="n">IP</span> <span class="n">address</span>
+<span class="o">-</span><span class="n">p</span> <span class="n">PORT</span><span class="p">,</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="n">PORT</span>                <span class="n">specify</span> <span class="n">the</span> <span class="n">TCP</span> <span class="n">port</span>
+<span class="o">--</span><span class="n">net_interface</span><span class="o">=</span><span class="n">NETINTERFACE</span>        <span class="n">specify</span> <span class="n">the</span> <span class="n">TCP</span> <span class="n">IP</span> <span class="n">address</span> <span class="k">for</span> <span class="n">netrpc</span>
+<span class="o">--</span><span class="n">net_port</span><span class="o">=</span><span class="n">NETPORT</span>                  <span class="n">specify</span> <span class="n">the</span> <span class="n">TCP</span> <span class="n">port</span> <span class="k">for</span> <span class="n">netrpc</span>
+<span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">netrpc</span>                         <span class="n">disable</span> <span class="n">netrpc</span>
+<span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">xmlrpc</span>                         <span class="n">disable</span> <span class="n">xmlrpc</span>
+<span class="o">-</span><span class="n">i</span> <span class="n">INIT</span><span class="p">,</span> <span class="o">--</span><span class="n">init</span><span class="o">=</span><span class="n">INIT</span>                <span class="n">init</span> <span class="n">a</span> <span class="n">module</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;all&quot;</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">modules</span><span class="p">)</span>
+<span class="o">--</span><span class="n">without</span><span class="o">-</span><span class="n">demo</span><span class="o">=</span><span class="n">WITHOUT_DEMO</span>         <span class="n">load</span> <span class="n">demo</span> <span class="n">data</span> <span class="k">for</span> <span class="n">a</span> <span class="n">module</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;all&quot;</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">modules</span><span class="p">)</span>
+<span class="o">-</span><span class="n">u</span> <span class="n">UPDATE</span><span class="p">,</span> <span class="o">--</span><span class="n">update</span><span class="o">=</span><span class="n">UPDATE</span>          <span class="n">update</span> <span class="n">a</span> <span class="n">module</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;all&quot;</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">modules</span><span class="p">)</span>
+<span class="o">--</span><span class="n">stop</span><span class="o">-</span><span class="n">after</span><span class="o">-</span><span class="n">init</span>                   <span class="n">stop</span> <span class="n">the</span> <span class="n">server</span> <span class="n">after</span> <span class="n">it</span> <span class="n">initializes</span>
+<span class="o">--</span><span class="n">debug</span>                             <span class="n">enable</span> <span class="n">debug</span> <span class="n">mode</span>
+<span class="o">-</span><span class="n">S</span><span class="p">,</span> <span class="o">--</span><span class="n">secure</span>                        <span class="n">launch</span> <span class="n">server</span> <span class="n">over</span> <span class="n">https</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">http</span>
+<span class="o">--</span><span class="n">smtp</span><span class="o">=</span><span class="n">SMTP_SERVER</span>                  <span class="n">specify</span> <span class="n">the</span> <span class="n">SMTP</span> <span class="n">server</span> <span class="k">for</span> <span class="n">sending</span> <span class="n">mail</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-related-options">
+<h3>Database related options<a class="headerlink" href="#database-related-options" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">d</span> <span class="n">DB_NAME</span><span class="p">,</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">DB_NAME</span>
+                      <span class="n">specify</span> <span class="n">the</span> <span class="n">database</span> <span class="n">name</span>
+<span class="o">-</span><span class="n">r</span> <span class="n">DB_USER</span><span class="p">,</span> <span class="o">--</span><span class="n">db_user</span><span class="o">=</span><span class="n">DB_USER</span>
+                      <span class="n">specify</span> <span class="n">the</span> <span class="n">database</span> <span class="n">user</span> <span class="n">name</span>
+<span class="o">-</span><span class="n">w</span> <span class="n">DB_PASSWORD</span><span class="p">,</span> <span class="o">--</span><span class="n">db_password</span><span class="o">=</span><span class="n">DB_PASSWORD</span>
+                      <span class="n">specify</span> <span class="n">the</span> <span class="n">database</span> <span class="n">password</span>
+<span class="o">--</span><span class="n">pg_path</span><span class="o">=</span><span class="n">PG_PATH</span>   <span class="n">specify</span> <span class="n">the</span> <span class="n">pg</span> <span class="n">executable</span> <span class="n">path</span>
+<span class="o">--</span><span class="n">db_host</span><span class="o">=</span><span class="n">DB_HOST</span>   <span class="n">specify</span> <span class="n">the</span> <span class="n">database</span> <span class="n">host</span>
+<span class="o">--</span><span class="n">db_port</span><span class="o">=</span><span class="n">DB_PORT</span>   <span class="n">specify</span> <span class="n">the</span> <span class="n">database</span> <span class="n">port</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="internationalization-options">
+<h3>Internationalization options<a class="headerlink" href="#internationalization-options" title="Permalink to this headline">¶</a></h3>
+<p>Use these options to translate OpenERP to another language.See i18n
+section of the user manual. Option &#8216;-l&#8217; is mandatory.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">l</span> <span class="n">LANGUAGE</span><span class="p">,</span> <span class="o">--</span><span class="n">language</span><span class="o">=</span><span class="n">LANGUAGE</span>
+                     <span class="n">specify</span> <span class="n">the</span> <span class="n">language</span> <span class="n">of</span> <span class="n">the</span> <span class="n">translation</span> <span class="n">file</span><span class="o">.</span> <span class="n">Use</span> <span class="n">it</span>
+                     <span class="k">with</span> <span class="o">--</span><span class="n">i18n</span><span class="o">-</span><span class="n">export</span> <span class="ow">and</span> <span class="o">--</span><span class="n">i18n</span><span class="o">-</span><span class="kn">import</span>
+<span class="o">--</span><span class="n">i18n</span><span class="o">-</span><span class="n">export</span><span class="o">=</span><span class="n">TRANSLATE_OUT</span>
+                     <span class="n">export</span> <span class="nb">all</span> <span class="n">sentences</span> <span class="n">to</span> <span class="n">be</span> <span class="n">translated</span> <span class="n">to</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">file</span>
+                     <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">--</span><span class="n">i18n</span><span class="o">-</span><span class="n">import</span><span class="o">=</span><span class="n">TRANSLATE_IN</span>
+                     <span class="kn">import</span> <span class="nn">a</span> <span class="n">CSV</span> <span class="n">file</span> <span class="k">with</span> <span class="n">translations</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="o">--</span><span class="n">modules</span><span class="o">=</span><span class="n">TRANSLATE_MODULES</span>
+                     <span class="n">specify</span> <span class="n">modules</span> <span class="n">to</span> <span class="n">export</span><span class="o">.</span> <span class="n">Use</span> <span class="ow">in</span> <span class="n">combination</span> <span class="k">with</span>
+                     <span class="o">--</span><span class="n">i18n</span><span class="o">-</span><span class="n">export</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="options-from-previous-versions">
+<h3>Options from previous versions<a class="headerlink" href="#options-from-previous-versions" title="Permalink to this headline">¶</a></h3>
+<p>Some options were removed in OpenERP version 6. For example,
+<code class="docutils literal"><span class="pre">price_accuracy</span></code> is now configured through the
+<span class="xref std std-ref">decimal_accuracy</span> screen.</p>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p id="getting-started-configuration-link">Two configuration files are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li>one for the client: <code class="docutils literal"><span class="pre">~/.openerprc</span></code></li>
+<li>one for the server: <code class="docutils literal"><span class="pre">~/.openerp_serverrc</span></code></li>
+</ul>
+</div></blockquote>
+<p>If they are not found, the server and the client will start with a
+default configuration. Those files follow the convention used by
+python&#8217;s ConfigParser module. Please note that lines beginning with
+&#8220;#&#8221; or &#8221;;&#8221; are comments. The client configuration file is
+automatically generated upon the first start. The sezrver
+configuration file can automatically be created using the command</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">openerp</span><span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="n">s</span> <span class="ow">or</span> <span class="o">./</span><span class="n">openerp</span><span class="o">-</span><span class="n">server</span> <span class="o">--</span><span class="n">save</span>
+</pre></div>
+</div>
+<p>You can specify alternate configuration files with</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">c</span> <span class="n">CONFIG</span><span class="p">,</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">CONFIG</span> <span class="n">specify</span> <span class="n">alternate</span> <span class="n">config</span> <span class="n">file</span>
+</pre></div>
+</div>
+<div class="section" id="configure-addons-locations">
+<h3>Configure addons locations<a class="headerlink" href="#configure-addons-locations" title="Permalink to this headline">¶</a></h3>
+<p>By default, the only directory of addons known by the server is
+server/bin/addons. It is possible to add new addons by</p>
+<blockquote>
+<div><ul class="simple">
+<li>copying them in server/bin/addons, or creating a symbolic link to
+each of them in this directory, or</li>
+<li>specifying another directory containing addons to the server. The
+later can be accomplished either by running the server with the
+<code class="docutils literal"><span class="pre">--addons-path=</span></code> option, or by configuring this option in the
+openerp_serverrc file, automatically generated under Linux in your
+home directory by the server when executed with the <code class="docutils literal"><span class="pre">--save</span></code>
+option. You can provide several addons to the <code class="docutils literal"><span class="pre">addons_path</span></code> =
+option, separating them using commas.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="start-up-script">
+<h2>Start-up script<a class="headerlink" href="#start-up-script" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 6.1.</span></p>
+</div>
+<p>To run the OpenERP server, the conventional approach is to use the
+<cite>openerp-server</cite> script.  It loads the <span class="xref std std-ref">openerp library</span>, sets a
+few configuration variables corresponding to command-line arguments,
+and starts to listen to incoming connections from clients.</p>
+<p>Depending on your deployment needs, you can write such a start-up script very
+easily. We also recommend you take a look at an alternative tool called
+<cite>openerp-command</cite> that can, among other things, launch the server.</p>
+<p>Yet another alternative is to use a WSGI-compatible HTTP server and let it call
+into one of the WSGI entry points of the server.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="_static/openerp.png" alt="Logo"/>
+</a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting started with OpenERP development</a><ul>
+<li><a class="reference internal" href="#installation-from-sources">Installation from sources</a></li>
+<li><a class="reference internal" href="#command-line-options">Command line options</a><ul>
+<li><a class="reference internal" href="#general-options">General Options</a></li>
+<li><a class="reference internal" href="#database-related-options">Database related options</a></li>
+<li><a class="reference internal" href="#internationalization-options">Internationalization options</a></li>
+<li><a class="reference internal" href="#options-from-previous-versions">Options from previous versions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#configure-addons-locations">Configure addons locations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#start-up-script">Start-up script</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">OpenERP Server Developers Documentation</a></li>
+      <li>Next: <a href="02_architecture.html" title="next chapter">Architecture</a></li>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/01_getting_started.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2012, OpenERP s.a.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> and a modified <a href="https://github.com/mitsuhiko/flask-sphinx-themes">Flask theme</a>.
+  </div>
+  
+  </body>
+</html>

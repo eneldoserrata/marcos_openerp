@@ -1,0 +1,35 @@
+.selection-area {
+    height: 32px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7B7979), to(#393939));
+    background: -moz-linear-gradient(#7B7979, #393939);
+    background:  -ms-linear-gradient(#7B7979, #393939);
+    background:      linear-gradient(#7B7979, #393939);
+}
+
+#customer_link:hover, #create_link:hover, #edit_link:hover{
+    background: #444 !important; 
+}
+
+.button_select {
+    height:32px;
+    padding-left:10px;
+    padding-right:10px;
+    border-right:  1px solid #3a3a3a;
+    color:#DDD;
+    line-height:32px;
+    text-align:center;
+    cursor: pointer;
+
+    -webkit-transition-property: background;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease-out;
+}
+
+.point-of-sale #branding .username{
+    float:right;
+    color:#DDD;
+    font-size:16px;
+    margin-right:20px;
+    margin-top:10px;
+    font-style:italic;
+}

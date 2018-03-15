@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report auto="True"
+                id="cheque_popular"
+                model="account.voucher"
+                name="cheque.popular"
+                rml="marcos_ncf/report/cheque_popular.rml"
+                string="Cheque popular"
+                menu="False"
+                header="False"/>
+    </data>
+</openerp>

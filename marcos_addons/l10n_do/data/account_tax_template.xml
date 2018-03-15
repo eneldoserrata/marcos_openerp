@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+	  
+        <record id="account_tax_code_template_standard_7" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Ventas</field>
+          <field name="description">V18%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_2202"/>
+          <field name="account_paid_id" ref="account_account_template_standard_2202"/>
+          <field name="base_code_id" ref="account_tax_code_8"/>
+          <field name="ref_base_code_id" ref="account_tax_code_12"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_8"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_12"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_standard_18" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Incluido Ventas</field>
+          <field name="description">V18% Incluido</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_2202"/>
+          <field name="account_paid_id" ref="account_account_template_standard_2202"/>
+          <field name="base_code_id" ref="account_tax_code_8"/>
+          <field name="ref_base_code_id" ref="account_tax_code_12"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_8"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_12"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">2</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_11" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Compras Locales</field>
+          <field name="description">CL18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11503"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11503"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_15"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_15"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">3</field>
+        </record>
+        <record id="account_tax_code_template_standard_12" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Compras Servicios</field>
+          <field name="description">CS18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11504"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11504"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_16"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_16"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">4</field>
+        </record>
+        <record id="account_tax_code_template_standard_13" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Compras Importaciones</field>
+          <field name="description">CI18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11505"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11505"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_17"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_17"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">5</field>
+        </record>
+        <record id="account_tax_code_template_standard_8" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Incluido Compras Locales</field>
+          <field name="description">CL18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11503"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11503"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_15"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_15"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">6</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_9" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Incluido Compras Servicios</field>
+          <field name="description">CS18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11504"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11504"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_16"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_16"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">7</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_10" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 18% Incluido Compras Importaciones</field>
+          <field name="description">CI18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref="account_account_template_standard_11505"/>
+          <field name="account_paid_id" ref="account_account_template_standard_11505"/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_17"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_17"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">8</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_16" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">18% ITBIS Retenido</field>
+          <field name="description">18% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_19"/>
+          <field name="ref_base_code_id" ref="account_tax_code_20"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_19"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_20"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">9</field>
+        </record>
+        <record id="account_tax_code_template_standard_1" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />	
+          <field name="name">ITBIS Exento 18% Ventas</field>
+          <field name="description">Exento 18%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="applicable_type">true</field>
+          <field name="type">percent</field>
+          <field name="amount"></field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_6"/>
+          <field name="ref_base_code_id" ref="account_tax_code_6"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="price_include" eval="False"/>
+          <field name="sequence">10</field>
+        </record>
+        <record id="account_tax_code_template_standard_19" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />	
+          <field name="name">ITBIS Exento 18% Ventas Incluido</field>
+          <field name="description">Exento 18% Incluido</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="applicable_type">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_6"/>
+          <field name="ref_base_code_id" ref="account_tax_code_6"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="price_include" eval="True"/>
+          <field name="sequence">11</field>
+          <field name="exempt" eval="True"/>
+        </record>
+        <record id="account_tax_code_template_standard_17" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">10% Honorarios por Servicios Independientes</field>
+          <field name="description">10% Honorarios Servicios</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.1</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">12</field>
+        </record>
+        <record id="account_tax_code_template_standard_15" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">2% Otras Retenciones (Norma 07-2007)</field>
+          <field name="description">2% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.02</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">13</field>
+        </record>
+        <record id="account_tax_code_template_standard_3" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 8% Ventas</field>
+          <field name="description">V8%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">14</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_4" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 8% Compras</field>
+          <field name="description">C8%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">15</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_5" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 11% Ventas</field>
+          <field name="description">V11%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.11</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_9"/>
+          <field name="ref_base_code_id" ref="account_tax_code_13"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_9"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_13"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">16</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_6" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS 11% Compras</field>
+          <field name="description">C11%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.11</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_9"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_9"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">17</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_standard_14" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">8% ITBIS Retenido</field>
+          <field name="description">8% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">18</field>
+        </record>
+        <record id="account_tax_code_template_standard_2" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS Exento 18% Compras</field>
+          <field name="description">Exento 18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">19</field>
+        </record>
+        <record id="account_tax_code_template_standard_20" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a" />
+          <field name="name">ITBIS Exento 18% Compras Incluido</field>
+          <field name="description">Exento 18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="True"/>
+          <field name="sequence">20</field>
+          <field name="exempt" eval="True"/>
+        </record>
+
+
+        <record id="account_tax_code_template_dgcc_1" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />	
+          <field name="name">ITBIS Exento</field>
+          <field name="description">Exento</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="applicable_type">true</field>
+          <field name="type">percent</field>
+          <field name="amount"></field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_6"/>
+          <field name="ref_base_code_id" ref="account_tax_code_6"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="price_include" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_2" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS CEX</field>
+          <field name="description">ITBIS CEX</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_3" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 8% Ventas</field>
+          <field name="description">V8%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_4" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 8% Compras</field>
+          <field name="description">C8%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_5" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 11% Ventas</field>
+          <field name="description">V11%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.11</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_9"/>
+          <field name="ref_base_code_id" ref="account_tax_code_13"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_9"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_13"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_6" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 11% Compras</field>
+          <field name="description">C11%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.11</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_9"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_9"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_7" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Ventas</field>
+          <field name="description">V18%</field>
+          <field name="type_tax_use">sale</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_8"/>
+          <field name="ref_base_code_id" ref="account_tax_code_12"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_8"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_12"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">10</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_8" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Incluido Compras Locales</field>
+          <field name="description">CL18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_15"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_15"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_9" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Incluido Compras Servicios</field>
+          <field name="description">CS18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_16"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_16"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_10" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Incluido Compras Importaciones</field>
+          <field name="description">CI18% Incluido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_17"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_17"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+          <field name="price_include">true</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_11" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Compras Locales</field>
+          <field name="description">CL18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_15"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_15"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_12" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Compras Servicios</field>
+          <field name="description">CS18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_16"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_16"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_13" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">ITBIS 18% Compras Importaciones</field>
+          <field name="description">CI18%</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_17"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_17"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_14" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">8% ITBIS Retenido</field>
+          <field name="description">8% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.08</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_15" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">2% Otras Retenciones (Norma 07-2007)</field>
+          <field name="description">2% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.02</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_16" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">18% ITBIS Retenido</field>
+          <field name="description">18% Retenido</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.18</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref="account_tax_code_19"/>
+          <field name="ref_base_code_id" ref="account_tax_code_20"/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref="account_tax_code_19"/>
+          <field name="ref_tax_code_id" ref="account_tax_code_20"/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+        <record id="account_tax_code_template_dgcc_17" model="account.tax.template">
+          <field name="chart_template_id" ref="account_chart_template_a1" />
+          <field name="name">10% Honorarios por Servicios Independientes</field>
+          <field name="description">10% Honorarios Servicios</field>
+          <field name="type_tax_use">purchase</field>
+          <field name="active">true</field>
+          <field name="type">percent</field>
+          <field name="amount">-0.1</field>
+          <field name="account_collected_id" ref=""/>
+          <field name="account_paid_id" ref=""/>
+          <field name="base_code_id" ref=""/>
+          <field name="ref_base_code_id" ref=""/>
+          <field name="base_sign" eval="1"/>
+          <field name="tax_code_id" ref=""/>
+          <field name="ref_tax_code_id" ref=""/>
+          <field name="tax_sign" eval="1"/>
+          <field name="ref_base_sign" eval="1"/>
+          <field name="ref_tax_sign" eval="1"/>
+          <field name="child_depend" eval="False"/>
+          <field name="include_base_amount" eval="False"/>
+          <field name="sequence">1</field>
+        </record>
+
+    </data>
+</openerp>

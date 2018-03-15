@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--modifica el modulo de punto de ventas para agregar campos de la impresora-->
+        <record model="ir.ui.view" id="marcos_point_of_sale_view_pos_config_form">
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="replace">
+                    <field name="payment_pos"/>
+                </field>
+                <field name="iface_payment_terminal" position="after">
+                    <field name="not_show_zero_stock"/>
+                    <field name="live_search"/>
+                    <field name="bill_credit"/>
+                </field>
+                <field name="iface_print_via_proxy" position="after">
+                    <field name="iface_printer_host"/>
+                    <field name="iface_printer_model"/>
+                </field>
+            </field>
+        </record>
+
+        <!--agrega al form de tiendas las secuencias para ncf-->
+        <record model="ir.ui.view" id="marcos_view_shop_form">
+            <field name="model">sale.shop</field>
+            <field name="inherit_id" ref="sale.view_shop_form"/>
+            <field name="arch" type="xml">
+                <group name="shop" position="after">
+                    <group>
+                        <field name="fiscal_id"/>
+                        <field name="final_id"/>
+                        <field name="especiales_id"/>
+                        <field name="gubernamentales_id"/>
+                        <field name="notas_credito_id"/>
+                        <field name="default_partner_id"/>
+                        <field name="default_receipt_journal_id"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <!--modifica el modulo de partner para validar rnc y posicion fiscal-->
+        <record model="ir.ui.view" id="marcos_view_partner_form">
+            <field name="name">marcos_view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+
+                <field name="name" position="attributes">
+                    <attribute name="placeholder">Nombre, RNC o Cedula</attribute>
+                </field>
+
+                <field name="property_account_position" position="replace"/>
+                <field name="ref" position="replace"/>
+
+                <field name="parent_id" position="before">
+                    <field name="ref" placeholder="RNC/Cédula"/>
+                    <div attrs="{'invisible': [('is_company','=', False)]}">
+                        <field name="property_account_position" placeholder="Posición fiscal"
+                            domain="['|',('for_supplier','=',supplier),('for_supplier','!=',customer)]"/>
+                    </div>
+                </field>
+
+                <field name="property_supplier_payment_term" position="after">
+                    <field name="invoice_method" attrs="{'invisible':[('supplier', '=', False)]}" string="Método facturación"/>
+                    <field name="multiple_company_rnc"/>
+                </field>
+
+            </field>
+        </record>
+
+        <!--greega campo fiscal type para identificar la secuencia para comprobantes tipo facturas-->
+       <record model="ir.ui.view" id="marcos_account_view_account_position_form">
+            <field name="name">marcos.account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="fiscal_type"/>
+                    <field name="for_supplier"/>
+                </field>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="marcos_pos_order_form_ncf">
+            <field name="name">marcos_pos_order_form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="session_id" position="after">
+                    <field name="ipf"/>
+                    <field name="type" invisible="1"/>
+                </field>
+                <xpath expr="//button[@string='Return Products']" position="before">
+                    <span attrs="{'invisible':['|',('ipf','=',True),'|',('state','=','draft'),'|',('type','=','receipt')]}">
+                        <widget type="printipf"/>
+                    </span>
+                </xpath>
+                <xpath expr="//button[@string='Return Products']" position="replace">
+                    <button name="refund" string="Return Products" type="object"
+                        attrs="{'invisible':['|',('state','=','draft'),('type','=','receipt')]}"/>
+                </xpath>
+                <xpath expr="//button[@string='Invoice']" position="replace">
+                    <button name="action_invoice" string="Invoice" type="object" states="paid"
+                        readonly="[('partner_id','=',False)]" invisible="[('type','=','receipt')]"/>
+                </xpath>
+                <xpath expr="//page[@string='Products']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type','=','receipt')]}</attribute>
+                </xpath>
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type','=','receipt')]}</attribute>
+                </field>
+                <field name="picking_id" position="attributes">
+                    <attribute name="attrs">{'invisible':[('type','=','receipt')]}</attribute>
+                </field>
+
+                <!--<xpath expr="//page[@string='Extra Info']" position="attributes">-->
+                    <!--<attribute name="attrs">{'invisible':[('type','=','receipt')]}</attribute>-->
+                <!--</xpath>-->
+
+                <xpath expr="//page[@string='Payments']" position="inside">
+                    <group col="4">
+                        <button name="action_pos_payment" string="Cambiar forma de pago" type="object"
+                         states="invoiced,paid" icon="terp-dolar" context="{'pos_session_id' : session_id, 'fix_payment': True}" />
+                    </group>
+                </xpath>
+
+            </field>
+         </record>
+
+        <record model="ir.ui.view" id="point_of_sale_view_pos_order_tree">
+            <field name="name">Marcos Orders</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr='//tree[@string="POS Orders"]' position='attributes'>
+                    <attribute name="colors">blue:state == 'draft';gray:state in ('done','cancel');red:ipf == False;black:state not in('done','cancel')</attribute>
+                </xpath>
+                <field name="name" position="before">
+                    <field name="ipf" invisible="1"/>
+                </field>
+
+                <field name="pos_reference" position="replace"/>
+
+                <field name="partner_id" position="replace"/>
+
+                <field name="name" position="before">
+                    <field name="temp_name"/>
+                </field>
+
+
+                <field name="session_id" position="after">
+                    <button name="action_pos_payment" string="Pago" type="object"
+                         states="draft" icon="terp-dolar" context="{'pos_session_id' : session_id}" />
+                </field>
+
+                <!--<field name="invoice_id" position="replace"/>-->
+
+            </field>
+        </record>
+
+        <!--<record id="marcos_invoice_tree" model="ir.ui.view">-->
+            <!--<field name="name">marcos_account.invoice.tree</field>-->
+            <!--<field name="model">account.invoice</field>-->
+            <!--<field name="inherit_id" ref="account.invoice_tree"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr='//tree[@string="Invoice"]' position='attributes'>-->
+                    <!--<attribute name="create">false</attribute>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record model="ir.ui.view" id="marcos_account_invoice_form">
+            <field name="name">marcos account.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_voucher.view_invoice_customer"/>
+            <field name="arch" type="xml">
+                <!--<xpath expr='//form[@string="Invoice"]' position='attributes'>-->
+                    <!--<attribute name="create">false</attribute>-->
+                    <!--&lt;!&ndash;<attribute name="edit">false</attribute>&ndash;&gt;-->
+                <!--</xpath>-->
+                <!--<xpath expr="//button[@string='Cancel Invoice']" position="replace"/>-->
+                <!--<xpath expr="//button[@string='Refund Invoice']" position="replace"/>-->
+                <!--<xpath expr="//button[@string='Register Payment']" position="replace">-->
+                    <!--<button name="invoice_pay_customer" type="object" string="Register Payment"-->
+                        <!--attrs="{'invisible': ['|', ('state','!=','open'), ('sent','=',True)]}" groups="base.group_user"/>-->
+                    <!--<button name="invoice_pay_customer" type="object" string="Register Payment"-->
+                        <!--attrs="{'invisible': ['|', ('state','!=','open'), ('sent','=',False)]}" class="oe_highlight" groups="base.group_user"/>-->
+                <!--</xpath>-->
+                <field name="date_invoice" position="before">
+                    <field name="ipf"/>
+                </field>
+                <field name="fiscal_position" position="attributes">
+                    <attribute name="domain">[('for_supplier','=',False)]</attribute>
+                </field>
+            </field>
+         </record>
+
+        <record id="marcos_sequence_view" model="ir.ui.view">
+            <field name="name">marcos_ir_sequence</field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <field name="implementation" position="after">
+                    <field name="ncf_limit"/>
+                    <field name="user_id"/>
+                    <field name="ncf_notify"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="marcos_view_account_journal_form" model="ir.ui.view">
+            <field name="name">marcos_account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="group_invoice_lines" position="after">
+                    <field name="ipf_payment_type" attrs="{'invisible':[('type', 'in', ['sale','sale_refund','purchase','purchase_refund','general','situation' ])]}"/>
+                    <field name="ncf_special" attrs="{'invisible':[('type', 'in', ['sale','sale_refund','cash','purchase_refund','general','situation', 'bank' ])]}"/>
+                    <field name="special_partner" attrs="{'invisible':[('ncf_special', '!=', 'gasto')]}"/>
+                    <field name="special_product" attrs="{'invisible':[('ncf_special', '!=', 'gasto')]}"/>
+                    <field name="is_cjc" attrs="{'invisible':[('type', 'in', ['sale','sale_refund', 'purchase', 'purchase_refund','general','situation', 'bank' ])]}"/>
+                    <field name="informal_journal_id" attrs="{'invisible':[('is_cjc','=',False)]}"/>
+                    <field name="gastos_journal_id" attrs="{'invisible':[('is_cjc','=',False)]}"/>
+                    <field name="purchase_journal_id" attrs="{'invisible':[('is_cjc','=',False)]}"/>
+                    <field name="pay_to" attrs="{'invisible':[('is_cjc','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="marcos_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">marcos_account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <xpath expr='//form//label[@for="reference_type"]' position='replace'/>
+                <xpath expr='//form//sheet//group//group//div' position='replace'>
+                    <field name="reference_type" class="oe_inline" />
+                    <field name="reference" attrs="{'invisible': [('ncf_required', '=', False)], 'required': [('ncf_required', '=', True)]}"/>
+                    <field name="ncf_required" invisible="1"/>
+                </xpath>
+                <field name="origin" position="replace"/>
+                <field name="payment_term" position="after">
+                    <field name="origin"/>
+                </field>
+                <field name="fiscal_position" position="attributes">
+                    <attribute name="domain">[('for_supplier','=',True)]</attribute>
+                    <attribute name="on_change">on_change_fiscal_position(fiscal_position)</attribute>
+                </field>
+                <field name="journal_id" position="attributes">
+                    <attribute name="on_change">onchange_journal_id(journal_id)</attribute>
+                </field>
+                <field name="reference" position="attributes">
+                    <attribute name="on_change">onchange_reference(reference, ncf_required)</attribute>
+                </field>
+                <field name="currency_id" position="after">
+                    <field name="pay_to"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="marcos_purchase_order_form" model="ir.ui.view">
+            <field name="name">marcos_purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_planned']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="marcos_view_order_form" model="ir.ui.view">
+            <field name="name">marcos_sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" on_change="onchange_partner_id(partner_id, context)" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                </field>
+            </field>
+        </record>
+
+        <record id="marcos_view_company_form" model="ir.ui.view">
+            <field name="name">marcos_res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="attributes">
+                    <attribute name="string">RNC</attribute>
+                </field>
+                <field name="company_registry" position="attributes">
+                    <attribute name="string">Registro Mercantil</attribute>
+                </field>
+            </field>
+        </record>
+
+        <!-- Account Tax -->
+        <record id="marcos_view_account_tax_form" model="ir.ui.view">
+            <field name="name">marcos_view.account.tax.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <field name="price_include" position="after">
+                    <field name="exempt"/>
+                    <field name="itbis"/>
+                    <field name="retention"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Tax Codes -->
+        <record id="marcos_view_tax_code_search" model="ir.ui.view">
+            <field name="name">marcos_account.tax.code.search</field>
+            <field name="model">account.tax.code</field>
+            <field name="inherit_id" ref="account.view_tax_code_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="field[@name='company_id']" position="after">
+                    <group expand="0" string="Group By...">
+                        <filter string="Parent" icon="terp-personal" domain="[]" context="{'group_by':'parent_id'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--account.voucher customer payment form-->
+        <record model="ir.ui.view" id="marcos_view_vendor_prereceipt_form">
+            <field name="name">marco.account.voucher.prereceipt.form</field>
+            <field name="model">account.voucher</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_receipt_form" />
+			<field name="arch" type="xml">
+                <!--<field name="company_id" position="after">-->
+                    <!--<field name="amount_in_word" invisible="1"/>-->
+                <!--</field>-->
+                <!--<xpath expr="//form//header//button[@string='Validate']" position="replace"/>-->
+                <button name="action_cancel_draft" position="after">
+                    <button name="print_receipt" string="Print Receipt" type="object" class="oe_highlight" />
+                </button>
+                <field name="journal_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+			</field>
+		</record>
+
+        <report auto="False"
+                id="report_marcos_customer_receipt"
+                model="account.voucher"
+                name="marcos.customer.receipt"
+                rml="marcos_ncf/report/marcos_customer_receipt.rml"
+                string="Recibo de Pago"
+                menu="False"
+                header="False"/>
+
+        <!--account.voucher vendor payment form-->
+        <record model="ir.ui.view" id="marcos_view_vendor_payment_form">
+            <field name="name">marco.account.voucher.payment.form</field>
+            <field name="model">account.voucher</field>
+			<field name="inherit_id" ref="account_voucher.view_vendor_payment_form" />
+			<field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="authorized" invisible="1"/>
+                </field>
+                <button name="proforma_voucher" position="replace">
+                    <button name="proforma_voucher" string="Validate" class="oe_highlight"
+                        attrs="{'invisible': ['|',('authorized','=',False),('state','not in','draft')]}" />
+                </button>
+                <button name="proforma_voucher" position="after">
+                    <button name="action_authorize" string="Authorize" class="oe_highlight" type="object"
+                        attrs="{'invisible': ['|',('authorized','=',True),('state','not in','draft')]}" />
+                </button>
+                <button name="cancel_voucher" position="after">
+                    <button name="print_check_request" string="Print Check Request" type="object" class="oe_highlight" 
+                        attrs="{'invisible':[('state','not in',['draft'])]}" />
+                    <button name="print_check_bpd" string="Imprimir Cheque BPD" type="object" class="oe_highlight" 
+                        attrs="{'invisible': [('authorized','=',False),'|',('state','in',['draft'])]}" />
+                </button>
+                <field name="name" position="after">
+                    <button name="remove_auto_paymment" type="object" string="Pago manual" icon="gtk-index"/>
+                </field>
+			</field>
+		</record>
+
+        <report auto="False"
+                id="report_marcos_check_request"
+                model="account.voucher"
+                name="marcos.check.request"
+                rml="marcos_ncf/report/marcos_check_request.rml"
+                string="Solicitud de Cheque"
+                menu="False"
+                header="False"/>
+
+        <!--product category add on change event-->
+        <record id="marcos_view_category_property_form" model="ir.ui.view">
+            <field name="name">marcos.product.category.property.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="account.view_category_property_form"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="attributes">
+                    <attribute name="on_change">on_change_parent_id(parent_id)</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="marcos_view_purchase_receipt_form">
+            <field name="name">marcos.account.voucher.purchase.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_purchase_receipt_form"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="attributes">
+                    <!--<attribute name="domain">[('ncf_special','=',True)]</attribute>-->
+                </field>
+                </field>
+        </record>
+        <!--Marcos view-->
+
+        <!--seacrh-->
+
+        <!--To remove go to my openerp account-->
+
+        <record id="mail.ir_cron_module_update_notification" model="ir.cron">
+            <field name="name">Update Notification</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall" />
+            <field eval="'publisher_warranty.contract'" name="model" />
+            <field eval="'update_notification'" name="function" />
+            <field eval="'(None,)'" name="args" />
+            <field name="priority">1000</field>
+        </record>
+
+        <menuitem id="base.menu_module_tree" parent="base.menu_management" name="Installed Modules" sequence="10" action="base.open_module_tree" />
+        <menuitem id="base.module_mi" parent="base.menu_management" sequence="100" action="base.modules_act_cl"/>
+
+    </data>
+</openerp>

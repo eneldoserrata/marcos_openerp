@@ -1,0 +1,239 @@
+<openerp>
+    <data>
+        <!-- Appointment -->
+        <!-- Appointment calendar view -->
+        <record id="salon_spa_appointment_calendar" model="ir.ui.view">
+            <field name="name">salon.spa.appointment.calendar</field>
+            <field name="model">salon.spa.appointment</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar string="Citas" color="state" date_start="start" date_delay="duration" mode="day">
+                    <field name="client_id" />
+                    <field name="service_id" />
+                    <field name="space_id" />
+                    <!-- TODO fix price not showing -->
+                    <field name="price" />
+                </calendar>
+            </field>
+        </record>
+        <!-- Appointment form view -->
+        <record id="salon_spa_appointment_form" model="ir.ui.view">
+            <field name="name">salon.spa.appointment.form</field>
+            <field name="model">salon.spa.appointment</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Citas" version="7.0">
+                    <header>
+                        <button name="action_view_pos_order" string="View Invoice" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ['draft', 'pending', 'cancel'])]}" />
+                        <button name="action_check_in" string="Check In" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'not in', ['pending'])]}" />
+                        <button name="action_cancel" string="Cancel" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', 'in', ['cancel', 'done'])]}" />
+                        <!-- <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,pending,open,done,cancel" clickable="True" /> -->
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,pending,open,done,cancel" />
+                    </header>
+                    <sheet string="Citas">
+                        <group col="4">
+                            <field name="client_id" />
+                            <field name="start" on_change="onchange_appointment_start(employee_id, start, duration, context)" />
+                            <field name="service_id" context="{'start_date': start}" on_change="onchange_appointment_service(service_id, employee_id, context)" />
+                            <field name="duration" widget="float_time" readonly="1" />
+                            <field name="employee_id" />
+                            <field name="price" readonly="1" />
+                            <field name="space_id" />
+                            <field name="order_line_id" />
+                        </group>
+                        <field name='notes' colspan='4' rowspan='8' nolabel='1' placeholder="Notas y Observaciones." />
+                        <div class="oe_chatter">
+                        </div>
+                        <!-- TODO remove extra space at the bottom of the view -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Appointment tree view -->
+        <record id="salon_spa_appointment_tree" model="ir.ui.view">
+            <field name="name">salon.spa.appointment.tree</field>
+            <field name="model">salon.spa.appointment</field>
+            <field name="arch" type="xml">
+                <tree string="Citas">
+                    <field name="name" />
+                    <field name="start" />
+                    <field name="duration" widget="float_time" />
+                    <field name="client_id" />
+                    <field name="employee_id" />
+                    <field name="service_id" />
+                    <field name="space_id" />
+                    <field name="price" />
+                    <field name="state" />
+                    <!-- Flow is controled via form view
+                    <button name="case_pending" string="En Espera" type="object"
+                            states="draft,open" icon="gtk-undo"/>
+                    <button name="case_open" string="Confirmar" type="object"
+                            states="pending" icon="gtk-jump-to"/>
+                    <button name="case_close" string="Concluida" type="object"
+                            states="open" icon="gtk-apply"/>
+                    <button name="case_cancel" string="Cancel" type="object"
+                            states="draft,pending,open" icon="gtk-cancel"/>
+                    <button name="case_pending" string="Restaurar" type="object"
+                            states="done,cancel" icon="gtk-refresh"/>
+                    -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Service -->
+        <!-- Service form view -->
+        <record id="salon_spa_service_form" model="ir.ui.view">
+            <field name="name">salon.spa.service.form</field>
+            <field name="model">salon.spa.service</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Servicios">
+                    <field name="service" on_change="onchange_service_service(service)" />
+                    <field name="name" invisible="True" />
+                    <field name="duration" widget="float_time" />
+                    <field name="categ_id" invisible="True" />
+                    <notebook colspan="4">
+                        <page string='Instrucciones'>
+                            <field name='instructions' colspan='4' nolabel='1' placeholder="Notas y Observaciones." />
+                        </page>
+                        <page string="Espacios Permitidos">
+                            <field name="space_ids" colspan="4" nolabel="1" />
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- Service tree view -->
+        <record id="salon_spa_service_tree" model="ir.ui.view">
+            <field name="name">salon.spa.service.tree</field>
+            <field name="model">salon.spa.service</field>
+            <field name="arch" type="xml">
+                <tree string="Servicios">
+                    <field name="service" />
+                    <field name="duration" widget="float_time" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Space-->
+        <!-- Space form view -->
+        <record id="salon_spa_space_form" model="ir.ui.view">
+            <field name="name">salon.spa.space.form</field>
+            <field name="model">salon.spa.space</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Espacios">
+                    <field name="name" />
+                    <field name="time_efficiency" />
+                </form>
+            </field>
+        </record>
+        <!-- Space tree view -->
+        <record id="salon_spa_space_tree" model="ir.ui.view">
+            <field name="name">salon.spa.space.tree</field>
+            <field name="model">salon.spa.space</field>
+            <field name="arch" type="xml">
+                <tree string="Espacios">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Schedule -->
+        <!-- Schedule form view -->
+        <record id="salon_spa_schedule_form" model="ir.ui.view">
+            <field name="name">salon.spa.schedule.form</field>
+            <field name="model">salon.spa.schedule</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Schedule">
+                    <group col="4">
+                        <field name="date" />
+                    </group>
+                    <group col="4">
+                        <field name="hour_start" widget="float_time" />
+                        <field name="hour_end" widget="float_time" />
+                    </group>
+                    <notebook colspan="4">
+                        <page string='Schedule Detail'>
+                            <field name="schedule_line_ids" colspan="4" nolabel="1">
+                                <tree string="Order lines" editable="bottom">
+                                    <field name="employee_id" />
+                                    <field name="hour_start" widget="float_time" />
+                                    <field name="hour_end" widget="float_time" />
+                                    <field name="missing" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!-- Schedule tree view -->
+        <record id="salon_spa_schedule_tree" model="ir.ui.view">
+            <field name="name">salon.spa.schedule.tree</field>
+            <field name="model">salon.spa.schedule</field>
+            <field name="arch" type="xml">
+                <tree string="Horarios">
+                    <field name="date" />
+                </tree>
+            </field>
+        </record>
+
+
+        <act_window
+            id="action_appointment"
+            name="Citas"
+            res_model="salon.spa.appointment"
+            view_type="form"
+            view_mode="calendar,tree,form" />
+        <act_window
+            id="action_checkout"
+            name="Caja"
+            res_model="pos.order"
+            view_type="form"
+            view_mode="tree,form" />
+            <!-- context="{'default_date_order':context_today()}" />
+             TODO make this the default filter
+             date_order must be the name of a filter -->
+        <act_window
+            id="action_schedule"
+            name="Horarios"
+            res_model="salon.spa.schedule"
+            view_type="form"
+            view_mode="tree,form" />
+        <act_window
+            id="action_view_client"
+            name="Clientes"
+            res_model="res.partner"
+            view_type="form"
+            view_mode="tree,form" />
+        <act_window
+            id="action_service"
+            name="Servicios"
+            res_model="salon.spa.service"
+            view_type="form"
+            view_mode="tree,form" />
+        <act_window
+            id="action_space"
+            name="Espacios"
+            res_model="salon.spa.space"
+            view_type="form"
+            view_mode="tree,form" />
+
+
+        <menuitem id="menu_root" name="Salon y Spa" />
+            <menuitem id="menu_planning" name="Planificación" parent="menu_root" sequence="1" />
+                <menuitem id="menu_appointment" action="action_appointment" parent="menu_planning" sequence="1"/>
+                <menuitem id="menu_checkout" action="action_checkout" parent="menu_planning" sequence="2"/>
+                <menuitem id="menu_schedule" action="action_schedule" parent="menu_planning" sequence="3"/>
+            <menuitem id="menu_configuration" name="Configuración" parent="menu_root" sequence="2" />
+                <menuitem id="menu_view_client" action="action_view_client" parent="menu_configuration" sequence="1" />
+                <menuitem id="menu_service" action="action_service" parent="menu_configuration" sequence="2" />
+                <menuitem id="menu_space" action="action_space" parent="menu_configuration" sequence="3" />
+
+    </data>
+</openerp>

@@ -1,0 +1,545 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* account_cancel
+# 	* hr_timesheet_invoice
+# 	* hr_contract
+# 	* account_followup
+# 	* portal_crm
+# 	* edi
+# 	* fetchmail
+# 	* account_voucher
+# 	* hr_evaluation
+# 	* project_timesheet
+# 	* product
+# 	* sale_mrp
+# 	* analytic_contract_hr_expense
+# 	* point_of_sale
+# 	* portal
+# 	* product_expiry
+# 	* account_accountant
+# 	* base_action_rule
+# 	* hr_payroll
+# 	* project
+# 	* base_setup
+# 	* knowledge
+# 	* contacts
+# 	* sale
+# 	* base_calendar
+# 	* note
+# 	* analytic
+# 	* procurement
+# 	* marcos_pos_ncf
+# 	* board
+# 	* marketing
+# 	* mail
+# 	* web
+# 	* document
+# 	* sale_stock
+# 	* stock
+# 	* event_sale
+# 	* marketing_campaign
+# 	* process
+# 	* hr_timesheet
+# 	* portal_project_issue
+# 	* account_payment
+# 	* portal_hr_employees
+# 	* email_template
+# 	* hr
+# 	* hr_attendance
+# 	* project_issue
+# 	* base_status
+# 	* web_view_editor
+# 	* portal_sale
+# 	* web_calendar
+# 	* lunch
+# 	* base
+# 	* account_report_company
+# 	* account_budget
+# 	* web_gantt
+# 	* share
+# 	* account_bank_statement_extensions
+# 	* l10n_do
+# 	* decimal_precision
+# 	* portal_event
+# 	* hr_expense
+# 	* account
+# 	* account_analytic_analysis
+# 	* resource
+# 	* portal_project
+# 	* event
+# 	* account_anglo_saxon
+# 	* web_diagram
+# 	* mrp
+# 	* account_asset
+# 	* web_kanban
+# 	* hr_recruitment
+# 	* account_check_writing
+# 	* hr_holidays
+# 	* purchase
+# 	* survey
+# 	* hr_timesheet_sheet
+# 	* sale_crm
+# 	* fleet
+# 	* auth_signup
+# 	* web_graph
+# 	* crm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131125-002431\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-06 18:41+0000\n"
+"PO-Revision-Date: 2013-12-06 14:59-0400\n"
+"Last-Translator: Eneldo Serrata <eneldoserrata@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_DO\n"
+"X-Generator: Poedit 1.6.1\n"
+
+
+#. modules: account, point_of_sale
+#: field:account.invoice,reference_type:0
+#: field:pos.make.payment,payment_name:0
+msgid "Payment Reference"
+msgstr "Referencia"
+
+
+#. module: account
+#: help:account.invoice,reference:0
+msgid "The partner reference of this invoice."
+msgstr "Aqui debe colocar el NCF de la proveedor."
+
+#. module: account
+#: field:account.invoice,reference:0
+#: field:account.invoice.line,invoice_id:0
+msgid "Invoice Reference"
+msgstr "NCF del proveedor"
+
+#. module: delivery
+#: model:ir.model,name:delivery.model_stock_picking_in
+msgid "Incoming Shipments"
+msgstr "Entradas de almacen"
+
+#. module: purchase
+#: model:ir.model,name:purchase.model_stock_picking_in
+#: model:ir.ui.menu,name:purchase.menu_action_picking_tree4
+#: view:purchase.order:0
+msgid "Incoming Shipments"
+msgstr "Entradas de almacen"
+
+#. module: stock
+#: view:board.board:0
+#: model:ir.actions.act_window,name:stock.action_stock_incoming_product_delay
+msgid "Incoming Products"
+msgstr "Entradas de almacen"
+
+#. module: stock
+#: view:stock.picking.in:0
+msgid "Incoming Shipments Available"
+msgstr "Entradas de almacen disponibles"
+
+
+#. module: stock
+#: view:stock.picking.in:0
+msgid "Incoming Shipments already processed"
+msgstr "Entradas de almacen ya procesados"
+
+
+#. module: stock
+#: model:ir.actions.act_window,help:stock.action_picking_tree4
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create an incoming shipment. \n"
+"              </p><p>\n"
+"                The Incoming Shipments is the list of all orders you will\n"
+"                receive from your suppliers. An incoming shipment contains "
+"a\n"
+"                list of products to be received according to the original\n"
+"                purchase order.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Pulse para crear un albarán de entrada.\n"
+"</p><p>\n"
+"Las entrada de almacen es la lista de todos los pedidos que recibirá de "
+"sus proveedores. Un albarán de entrada contiene una lista de productos a ser "
+"recibidos de acuerdo con el pedido de compra original.\n"
+"</p>\n"
+"            "
+
+
+#. module: account
+#: model:ir.actions.act_window,name:account.action_invoice_tree4
+#: model:ir.ui.menu,name:account.menu_action_invoice_tree4
+msgid "Supplier Refunds"
+msgstr "Notas credito/debito proveedor"
+
+
+#. module: purchase
+#: view:board.board:0
+#: model:ir.actions.act_window,name:purchase.purchase_draft
+msgid "Request for Quotations"
+msgstr "Pedido de compra"
+
+
+#. module: purchase
+#: selection:purchase.order,invoice_method:0
+msgid "Based on Purchase Order lines"
+msgstr "Se digitara la factura manualmente"
+
+#. module: purchase
+#: selection:purchase.order,invoice_method:0
+msgid "Based on generated draft invoice"
+msgstr "El proveedor envia factura definitiva"
+
+
+#. module: purchase
+#: selection:purchase.order,invoice_method:0
+msgid "Based on incoming shipments"
+msgstr "El proveedor envia orden de entrega y luego envia la factura"
+
+#. module: purchase
+#: field:purchase.order,invoice_method:0
+msgid "Invoicing Control"
+msgstr "Método facturación"
+
+#. module: purchase
+#: model:ir.actions.act_window,name:purchase.action_purchase_line_product_tree
+#: model:ir.actions.act_window,name:purchase.open_board_purchase
+#: model:ir.ui.menu,name:purchase.menu_board_purchase
+#: model:ir.ui.menu,name:purchase.menu_purchase_config
+#: view:res.partner:0
+msgid "Purchases"
+msgstr "Compras"
+
+#. module: purchase
+#: model:ir.actions.act_window,name:purchase.purchase_rfq
+#: model:ir.ui.menu,name:purchase.menu_purchase_rfq
+#: view:purchase.order:0
+#: view:purchase.report:0
+msgid "Quotations"
+msgstr "Órdenes de compra"
+
+#. module: account
+#: view:account.invoice:0
+msgid "Ask Refund"
+msgstr "Aplicar nota de credito"
+
+#. module: account
+#: field:account.invoice.refund,journal_id:0
+msgid "Refund Journal"
+msgstr "Diario de nota de credito"
+
+#. module: account
+#: view:account.invoice:0
+#: model:ir.actions.act_window,name:account.action_account_invoice_refund
+msgid "Refund Invoice"
+msgstr "Generar nota de credito"
+
+#. modules: account_cancel, account
+#: view:account.invoice:0
+msgid "Cancel Invoice"
+msgstr "Cancelar documento"
+
+#. module: account
+#: field:account.invoice.refund,filter_refund:0
+msgid "Refund Method"
+msgstr "Método"
+
+#. module: account
+#: selection:account.invoice.refund,filter_refund:0
+msgid "Create a draft refund"
+msgstr "Crear nota de credito borrador con todos los productos"
+
+#. module: account
+#: view:account.invoice.refund:0
+msgid ""
+"You will be able to edit and validate this\n"
+"                                    credit note directly or keep it draft,\n"
+"                                    waiting for the document to be issued "
+"by\n"
+"                                    your supplier/customer."
+msgstr ""
+"Podrá editar y validar este documento directamente o mantenerlo "
+"como borrador, esperando a que el documento sea expedido por su "
+"proveedor."
+
+
+#. module: account
+#: view:account.invoice:0
+msgid "Draft Refund "
+msgstr "Borrador de nota de credito/debito"
+
+
+#. module: stock
+#: view:stock.picking:0
+msgid "Create Invoice/Refund"
+msgstr "Enviar a contabilidad"
+
+#. module: stock
+#: view:stock.picking:0
+msgid "Cancel Transfer"
+msgstr "Cancelar transferencia"
+
+#. module: account
+#: view:account.invoice:0
+msgid "Draft Refund"
+msgstr "Borrador de nota de credito/debito"
+
+#. module: stock
+#: view:board.board:0
+#: model:ir.actions.act_window,name:stock.action_stock_incoming_product_delay
+msgid "Incoming Products"
+msgstr "Entradas de almacen"
+
+#. module: stock
+#: view:stock.picking.in:0
+msgid "Incoming Shipments Available"
+msgstr "Entradas de almacen disponibles"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.action_picking_tree4
+#: model:ir.model,name:stock.model_stock_picking_in
+#: model:ir.ui.menu,name:stock.menu_action_picking_tree4
+#: view:stock.picking.in:0
+msgid "Incoming Shipments"
+msgstr "Entradas de almacen"
+
+#. module: stock
+#: view:stock.picking.in:0
+msgid "Incoming Shipments already processed"
+msgstr "Entradas de almacen ya procesadas"
+
+#. module: stock
+#: model:ir.actions.act_window,help:stock.action_picking_tree4
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create an incoming shipment. \n"
+"              </p><p>\n"
+"                The Incoming Shipments is the list of all orders you will\n"
+"                receive from your suppliers. An incoming shipment contains "
+"a\n"
+"                list of products to be received according to the original\n"
+"                purchase order.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Pulse para crear un entrada de almacen.\n"
+"</p><p>\n"
+"Las entradas de almacen son la lista de todos los pedidos que recibirá de "
+"sus proveedores. Una entrada de almacen contiene una lista de productos a ser "
+"recibidos de acuerdo con el pedido de compra original.\n"
+"</p>\n"
+"            "
+"            "
+
+#. module: purchase
+#: model:ir.model,name:purchase.model_stock_picking_in
+#: model:ir.ui.menu,name:purchase.menu_action_picking_tree4
+#: view:purchase.order:0
+msgid "Incoming Shipments"
+msgstr "Entradas de almacen"
+
+#. module: delivery
+#: model:ir.model,name:delivery.model_stock_picking_in
+msgid "Incoming Shipments"
+msgstr "Entradas de almacen"
+
+#. module: delivery
+#: model:ir.model,name:delivery.model_stock_picking_out
+msgid "Delivery Orders"
+msgstr "Salidas de almacen"
+
+#. module: sale
+#: model:ir.actions.act_window,help:sale.action_order_line_tree2
+msgid ""
+"Here is a list of each sales order line to be invoiced. You can invoice "
+"sales orders partially, by lines of sales order. You do not need this list "
+"if you invoice from the delivery orders or if you invoice sales totally."
+msgstr ""
+"Esta es una lista de todas las líneas de pedidos de venta a facturar. Puede "
+"facturar pedidos de venta parcialmente, por líneas de pedido. No necesita "
+"esta lista si factura desde las salidas de almacen o si factura pedidos de "
+"venta completos."
+
+#. module: sale
+#: model:ir.actions.act_window,help:sale.action_order_line_tree2
+msgid ""
+"Here is a list of each sales order line to be invoiced. You can invoice "
+"sales orders partially, by lines of sales order. You do not need this list "
+"if you invoice from the delivery orders or if you invoice sales totally."
+msgstr ""
+"Esta es una lista de todas las líneas de pedidos de venta a facturar. Puede "
+"facturar pedidos de venta parcialmente, por líneas de pedido. No necesita "
+"esta lista se factura desde las salidas de almacen o si factura pedidos de "
+"venta completos."
+
+#. module: stock
+#: view:board.board:0
+#: model:ir.actions.act_window,name:stock.action_stock_outgoing_product_delay
+msgid "Outgoing Products"
+msgstr "Salidas de alamcen"
+
+#. module: stock
+#: model:ir.actions.act_window,name:stock.action_picking_tree
+#: model:ir.model,name:stock.model_stock_picking_out
+#: model:ir.ui.menu,name:stock.menu_action_picking_tree
+#: view:stock.picking.out:0
+msgid "Delivery Orders"
+msgstr "Salidas de almacen"
+
+#. module: sale
+#: model:ir.actions.act_window,name:sale.action_quotations
+#: model:ir.ui.menu,name:sale.menu_sale_quotations
+#: view:sale.order:0
+#: view:sale.report:0
+msgid "Quotations"
+msgstr "Cotizaciónes"
+
+#. module: sale
+#: model:mail.message.subtype,description:sale.mt_order_sent
+#: model:mail.message.subtype,name:sale.mt_order_sent
+msgid "Quotation sent"
+msgstr "Cotización enviada"
+
+#. module: sale
+#: report:sale.order:0
+msgid "Quotation Date"
+msgstr "Fecha de la cotización"
+
+#. module: sale
+#: view:sale.order:0
+msgid "Quotation Number"
+msgstr "Número de cotización"
+
+#. module: sale
+#: model:process.transition,name:sale.process_transition_confirmquotation0
+msgid "Confirm Quotation"
+msgstr "Confirmar cotización"
+
+#. module: sale
+#: model:mail.message.subtype,description:sale.mt_order_confirmed
+msgid "Quotation confirmed"
+msgstr "Cotización confirmada"
+
+#. module: sale
+#: selection:sale.order,state:0
+msgid "Draft Quotation"
+msgstr "Cotización borrador"
+
+#. module: sale
+#: view:sale.order:0
+msgid "Cancel Quotation"
+msgstr "Cancelar cotización"
+
+#. module: sale
+#: model:process.node,name:sale.process_node_quotation0
+#: view:sale.order:0
+#: selection:sale.report,state:0
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: sale
+#: selection:sale.order,state:0
+msgid "Quotation Sent"
+msgstr "Cotización enviada"
+
+#. module: sale
+#: report:sale.order:0
+msgid "Quotation N°"
+msgstr "Cotización Nº"
+
+#. module: sale
+#: view:sale.order:0
+msgid "Quotation "
+msgstr "Cotización "
+
+#. module: debit_credit_note
+#: field:account.invoice,parent_id:0
+msgid "Parent Invoice"
+msgstr "Afecta"
+
+#. module: stock
+#: view:stock.invoice.onshipping:0
+msgid "Create Invoice"
+msgstr "Enviar a contabilidad"
+
+#. module: stock
+#: view:stock.invoice.onshipping:0
+msgid "Create invoice"
+msgstr "Enviar a contabilidad"
+
+#. module: stock
+#: selection:stock.return.picking,invoice_state:0
+msgid "To be refunded/invoiced"
+msgstr "Solicitud nota credito/debito"
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/point_of_sale.py:420
+#, python-format
+msgid "Point of Sale Loss"
+msgstr "Faltante en caja"
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/point_of_sale.py:416
+#, python-format
+msgid "Point of Sale Profit"
+msgstr "Sobrante en caja"
+
+#. module: account
+#: model:ir.actions.act_window,name:account.action_invoice_tree3
+#: model:ir.ui.menu,name:account.menu_action_invoice_tree3
+msgid "Customer Refunds"
+msgstr "Notas credito/debito cliente"
+
+#. module: account_voucher
+#: model:ir.actions.act_window,name:account_voucher.action_sale_receipt
+#: model:ir.ui.menu,name:account_voucher.menu_action_sale_receipt
+msgid "Sales Receipts"
+msgstr "Otros ingresos"
+
+#. module: account_voucher
+#: view:account.voucher:0
+msgid "Sales Receipt"
+msgstr "Otros ingresos"
+
+#. module: account_voucher
+#: view:account.voucher:0
+msgid "Print Receipt"
+msgstr "Imprimir Recibo"
+
+#. module: account_voucher
+#: view:account.voucher:0
+msgid "Print Check Request"
+msgstr "Imprimir Solicitud de Cheque"
+
+#. module: point_of_sale
+#: model:ir.actions.act_window,name:point_of_sale.act_pos_session_orders
+#: model:ir.actions.act_window,name:point_of_sale.action_pos_pos_form
+#: model:ir.ui.menu,name:point_of_sale.menu_point_ofsale
+#: field:pos.session,order_ids:0
+msgid "Orders"
+msgstr "Transacciones"
+
+#. module: point_of_sale
+#: model:ir.actions.act_window,name:point_of_sale.act_pos_session_orders
+#: model:ir.actions.act_window,name:point_of_sale.action_pos_pos_form
+#: model:ir.ui.menu,name:point_of_sale.menu_point_ofsale
+#: field:pos.session,order_ids:0
+msgid "Orders"
+msgstr "Transacciones"
+
+#. module: account_voucher
+#: view:account.voucher:0
+msgid "Authorize"
+msgstr "Autorizar"
+
+#. module: pos.print.customer.receipt
+#: view:pos.print.customer.receipt:0
+msgid "Print Receipt"
+msgstr "Imprimir Recibo"

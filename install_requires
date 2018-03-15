@@ -1,0 +1,24 @@
+babel
+docutils
+feedparser
+gdata
+Jinja2
+lxml
+mako
+mock
+psutil
+psycopg2 >= 2.2
+pydot
+python-dateutil < 2
+python-ldap # optional
+python-openid
+pytz
+pywebdav
+pyyaml
+reportlab
+simplejson
+unittest2
+vatnumber
+vobject
+werkzeug
+xlwt

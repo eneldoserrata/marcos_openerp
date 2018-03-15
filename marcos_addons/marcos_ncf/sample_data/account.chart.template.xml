@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!--
+        Resource: account.tax.code.template
+        Account tax code templates for Dominican Republic
+        -->
+	    <record id="account_chart_template_eym" model="account.chart.template">
+            <field name="name">Catalogo de Cuenta EYM</field>
+            <field name="account_root_id" ref="eym_account_account_1"/>
+            <field name="tax_code_root_id" ref="account_tax_code_1"/>
+            <field name="bank_account_view_id" ref="eym_account_account_45"/>
+            <field name="property_account_receivable" ref="eym_account_account_52"/>
+            <field name="property_account_payable" ref="eym_account_account_1998"/>
+            <field name="property_account_income_categ" ref="eym_account_account_2068"/>
+            <field name="property_account_expense_categ" ref="eym_account_account_2103"/>
+            <field name="complete_tax_set" eval="False"/>
+        </record>
+
+        <record id="fiscal_position_normal_taxes_template1" model="account.fiscal.position.template">
+            <field name="name">Para Crédito Fiscal</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+        </record>
+
+        <record id="fiscal_position_tax_exempt_template2" model="account.fiscal.position.template">
+            <field name="name">Cosumidor Final</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+        </record>
+
+        <record id="fiscal_position_tax_exempt_template3" model="account.fiscal.position.template">
+            <field name="name">Gubernamental</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+        </record>
+
+        <record id="fiscal_position_tax_exempt_template4" model="account.fiscal.position.template">
+            <field name="name">Regímenes Especiales</field>
+            <field name="chart_template_id" ref="account_chart_template_eym"/>
+        </record>
+
+    </data>
+
+</openerp>

@@ -1,0 +1,138 @@
+/*
+##############################################################################
+#    Module : POS Cashiers
+#    Manage cashiers for Point Of Sale
+#    Author : Thierry Godin <thierry@lapinmoutardepommedauphine.com>
+#    Copyright (C) 2013 Thierry Godin 
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+##############################################################################
+*/
+
+/*Le widget caissier 
+    liste déroulante
+    Bouton Payer
+    Message d'erreur
+*/
+#cashier-title{
+    vertical-align: middle;
+    display:inline-block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    width: 45%;
+}
+
+#cashier-frame {
+    text-align: center;
+    vertical-align: middle;
+    display:inline-block;
+    border: 1px solid #000000;
+    width: 54%;
+    padding: 5px 0px 5px 0px;
+}
+
+#cashier-select{
+    width:92%;
+}
+
+#cashier-footer{
+    background: linear-gradient(#7B7979, #393939) repeat scroll 0 0 transparent;
+    display:block;  
+    color: #ffcc00;
+    padding: 10px 5px 10px 5px;
+}
+
+#gotopay {
+    padding: 8px 4px 8px 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+#gotopay button {
+    height: 50px;
+    width: 208px;
+    margin: 0px -6px 4px -2px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #555555;
+    border-top: 1px solid #efefef;
+    font-size: 14px;
+}
+
+#AlertNoCashier{
+    background: red url("../img/error.png") no-repeat 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 4px 4px 30px;
+    height: 24px;
+    text-transform: uppercase;
+}
+
+
+/*La page de paiement*/
+#pay-screen-cashier{
+    color: black;
+    border-bottom: 1px dashed #666666;
+    padding: 2px 2px 2px 2px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#paypad {
+    padding: 10px 0px 10px 0px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.point-of-sale #paypad button {
+    height: 40px;
+    width: 180px;
+    margin: 20px 4px 0px 4px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #555555;
+    border-top: 1px solid #efefef;
+    font-size: 12px;
+}
+
+.point-of-sale .pos-payment-container {
+    text-align: left;
+    min-width: 500px;
+    margin-top: 10px;
+    padding: 20px 40px 20px 40px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px white,0px -1px 0px white, 0px 4px 0px #DFDFDF, 0px 10px 30px rgba(0, 0, 0, 0.21);
+}
+
+/*Le reçu de paiement (Ticket)*/
+#ticket-screen-cashier{
+    font-style: italic;
+    border-bottom : 1px solid gray;
+    padding-bottom: 2px;
+}
+
+#header-ticket{
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px 5px 5px 5px;
+    margin-bottom : 10px;
+}
+

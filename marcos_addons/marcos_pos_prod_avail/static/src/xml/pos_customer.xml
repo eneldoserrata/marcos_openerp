@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    
+    <t t-extend="ProductWidget">
+        <t t-jquery="li.product" t-operation="replace">
+            <li class='product'>
+                <a href="#">
+                    <div class="product-img">
+                        <img src='' /> <!-- the product thumbnail -->
+                        <t t-if="!widget.model.get('to_weight')">
+                            <span class="price-tag">
+                                <t t-esc="widget.format_currency(widget.model.get('price'))"/>
+                            </span>
+                            <span class="qty-tag">
+                                <t t-esc="widget.model.get('qty_available')"/>
+                            </span>
+                        </t>
+                        <t t-if="widget.model.get('to_weight')">
+                            <span class="price-tag">
+                                <t t-esc="widget.format_currency(widget.model.get('price'))+'/Kg'"/>
+                            </span>
+                            <span class="qty-tag">
+                                <t t-esc="widget.model.get('qty_available')"/>
+                            </span>
+                        </t>
+                    </div>
+                    <div class="product-name">
+                        <t t-esc="widget.model.get('name')"/>
+                    </div>
+                </a>
+            </li>
+        </t>
+    </t>
+
+</templates>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="account_bank_transactions_form_view" model="ir.ui.view">
+            <field name="name">Account Bank Transactions Form View</field>
+            <field name="model">account.bank.transactions</field>
+            <field name="arch" type="xml">
+                <form string="Conciliación bancaria" version="7.0">
+                    <header>
+                        <button name="transfer_draft" states="cancel" string="Draft"/>
+                        <button name="transfer_confirm" states="draft" string="Confirm" class="oe_highlight"/>
+                        <button name="transfer_done" states="confirm" string="Done" class="oe_highlight" invisible="1"/>
+                        <button name="transfer_cancel" states="draft,confirm,done" string="Cancelar"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"
+                               statusbar_colors='{"confirm":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <label string="Movimiento " attrs="{'invisible':[('name','=','/')]}"/>
+                                <field name="name" class="oe_inline" attrs="{'invisible':[('name','=','/')]}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date"/>
+
+                            </group>
+                            <group>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="origin"/>
+                                <field name="bank_statement_id"/>
+                                <field name="conciliation_id"/>
+                                <field name="adjust_move" attrs="{'invisible':[('adjust_move','=',False)]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <group>
+                                        <field name="src_journal_id"
+                                               domain="[('type','in',['cash','bank']),('id','!=',dst_journal_id),('company_id','=',company_id)]"
+                                               on_change="onchange_journal(src_journal_id,dst_journal_id,date,exchange_rate,src_amount)"/>
+                                        <field name="src_partner_id"
+                                               attrs="{'invisible':[('src_have_partner','=',False)], 'required':[('src_have_partner','=',True)]}"/>
+                                        <field name="src_balance" attrs="{'invisible':[('state','!=','draft')]}"/>
+                                        <field name="src_amount"
+                                               on_change="onchange_amount('src_amount',src_amount,dst_amount,exchange_rate)"/>
+                                        <field name="src_have_partner" invisible="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="dst_journal_id"
+                                               domain="[('type','=','bank'),('id','!=',src_journal_id),('company_id','=',company_id), ('journal_user', '=', False)]"
+                                               on_change="onchange_journal(src_journal_id,dst_journal_id,date,exchange_rate,src_amount)"/>
+                                        <field name="dst_partner_id"
+                                               attrs="{'invisible':[('dst_have_partner','=',False)], 'required':[('dst_have_partner','=',True)]}"/>
+                                        <field name="dst_balance" attrs="{'invisible':[('state','!=','draft')]}"/>
+                                        <field name="dst_amount"
+                                               on_change="onchange_amount('dst_amount',src_amount,dst_amount,exchange_rate)"/>
+                                        <field name="dst_have_partner" invisible="1"/>
+                                        <field name="exchange" invisible="1"/>
+                                        <field name="exchange_rate"
+                                               invisible="1"
+                                               on_change="onchange_amount('exchange_rate',src_amount,dst_amount,exchange_rate)"
+                                               attrs="{'readonly':['|',('exchange','=',False),('state','!=','draft')]}"/>
+                                        <field name="exchange_inv" invisible="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Payments"
+                                  attrs="{'invisible':[('state','=','draft')],'readonly':[('state','in',['done','cancel'])]}">
+                                <field name="adjust_move"/>
+                                <field name="voucher_ids"/>
+                            </page>
+                            <page string="Asientos"
+                                  attrs="{'invisible':[('state','=','draft')],'readonly':[('state','in',['done','cancel'])]}">
+                                <!--<field name="adjust_move"/>-->
+                                <field name="move_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_bank_transactions_tree_view" model="ir.ui.view">
+            <field name="name">Account Bank Transactions Tree View</field>
+            <field name="model">account.bank.transactions</field>
+            <field name="arch" type="xml">
+                <tree string="Conciliaciones bancarias">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="src_journal_id"/>
+                    <field name="src_partner_id"/>
+                    <field name="src_amount"/>
+                    <field name="dst_journal_id"/>
+                    <field name="dst_partner_id"/>
+                    <field name="dst_amount"/>
+                    <field name="state"/>
+                    <button name="transfer_confirm" states="draft" string="Confirmar" icon="gtk-go-forward"/>
+                    <button name="transfer_done" states="confirm" string="Confirmado" icon="gtk-apply"/>
+                    <button name="state" states="done" icon="gtk-yes"/>
+                    <button name="transfer_cancel" states="confirm,done" string="Cancelar" icon="gtk-cancel"/>
+                    <button name="transfer_draft" states="cancel" string="Reintegrar" icon="gtk-revert-to-saved"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_bank_transactions_search">
+            <field name="name">Account Bank Transactions Search</field>
+            <field name="model">account.bank.transactions</field>
+            <field name="arch" type="xml">
+                <search string="Movimientos">
+                    <field name="dst_journal_id" string="Banco de destino"/>
+                    <field name="date" string="Fecha"/>
+                    <filter string="Borrador" domain="[('state','=','draft')]"/>
+                    <filter string="Confirmado" domain="[('state','=','confirm')]"/>
+                    <filter string="Conciliado" domain="[('state','=','done')]"/>
+                    <filter string="Cancelado" domain="[('state','=','cancel')]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Diario de destino" context="{'group_by': 'dst_journal_id'}"
+                                icon="terp-stock_effects-object-colorize"/>
+                        <filter string="Diario de Origen" context="{'group_by': 'src_journal_id'}"
+                                icon="terp-stock_effects-object-colorize"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="account_bank_transactions_action">
+            <field name="name">Transacciones Bancarias</field>
+            <field name="res_model">account.bank.transactions</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name='Transacciones Bancarias'
+                  id='account_bank_transactions_menu'
+                  parent='account.menu_finance_bank_and_cash'
+                  sequence='13'
+                  action="account_bank_transactions_action"/>
+
+
+        <!---->
+        <record id="account_bank_conciliation_form_view" model="ir.ui.view">
+            <field name="name">Account Bank Conciliation Form View</field>
+            <field name="model">account.bank.conciliation</field>
+            <field name="arch" type="xml">
+                <form string="Conciliación bancaria" version="7.0">
+                    <header>
+                        <button name="import_transactions" type="object" states="draft" string="Importar Trasacciones" class="oe_highlight"/>
+                        <button name="confirm" states="progress" string="Confirm" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,progress,confirm"
+                               statusbar_colors='{"confirm":"blue"}'/>
+                    </header>
+                    <sheet>
+                        <group string="Banco a conciliar" col="1">
+
+                            <field name="company_id" invisible="1"/>
+                            <field name="name"/>
+                            <field name="jornal_id"
+                                   domain="[('type','=','bank'),('company_id','=',company_id), ('journal_user', '=', False)]"/>
+                            <group string="Datos generales" col="4">
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="amount_from"/>
+                                <field name="amount_to"/>
+                                <field name="diference"/>
+                                <button name="actualizar" string="Actualizar" type="object"></button>
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page string="Transacciones">
+                                <field name="bank_transactions_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="account_bank_conciliation_tree_view" model="ir.ui.view">
+            <field name="name">Account Bank Conciliation Tree View</field>
+            <field name="model">account.bank.conciliation</field>
+            <field name="arch" type="xml">
+                <tree string="Conciliación bancaria">
+                    <field name="name"/>
+                    <field name="jornal_id"/>
+                    <field name="amount_from"/>
+                    <field name="amount_to"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="account_bank_conciliation_action">
+            <field name="name">Conciliación bancaria</field>
+            <field name="res_model">account.bank.conciliation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name='Conciliación bancaria'
+                  id='account_bank_conciliation_menu'
+                  parent='account.menu_finance_bank_and_cash'
+                  sequence='14'
+                  action="account_bank_conciliation_action"/>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,23 @@
+div.dhx_marked_timespan.resource-planning-leave div
+{
+    line-height: 2em;
+    text-align: center;
+    padding: .1em;
+    background: red;
+}
+div.dhx_marked_timespan.resource-planning-leave
+{
+    z-index: 100;
+}
+div.dhx_cal_event
+{
+    z-index: 110;
+}
+.dhx_cal_container, .dhx_cal_event .dhx_header, .dhx_cal_event .dhx_title, .dhx_cal_event .dhx_body, .dhx_cal_event .dhx_footer
+{
+    font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+}
+.dhx_scheduler_timeline .dhx_cal_data table tr + tr .resource-planning-leave
+{
+    display: none;
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+		<data noupdate="1">
+			<!--
+			Tax Code Template Configuration
+			-->
+
+			<record id="account_tax_code_1" model="account.tax.code.template">
+				 <field name="sign">1.0</field>
+				 <field name="code">0</field>
+				 <field name="parent_id" ref="" />
+				 <field name="notprintable" eval="False" />
+				 <field name="name">IT-1</field>
+			</record>
+                <record id="account_tax_code_2" model="account.tax.code.template">
+                     <field name="sign">1.0</field>
+                     <field name="code">1</field>
+                     <field name="parent_id" ref="account_tax_code_1" />
+                     <field name="notprintable" eval="False" />
+                     <field name="name">OPERACIONES</field>
+                </record>
+                    <record id="account_tax_code_3" model="account.tax.code.template">
+                         <field name="sign">1.0</field>
+                         <field name="code">1.1</field>
+                         <field name="parent_id" ref="account_tax_code_2" />
+                         <field name="notprintable" eval="False" />
+                         <field name="name">TOTAL DE OPERACIONES DEL PERIODO</field>
+                    </record>
+                            <record id="account_tax_code_4" model="account.tax.code.template">
+                                 <field name="sign">1.0</field>
+                                 <field name="code">1.1.1</field>
+                                 <field name="parent_id" ref="account_tax_code_3" />
+                                 <field name="notprintable" eval="False" />
+                                 <field name="name">TOTAL INGRESOS POR OPERACIONES NO GRAVADAS</field>
+                            </record>
+                                <record id="account_tax_code_5" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.1.1.1</field>
+                                     <field name="parent_id" ref="account_tax_code_4" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">INGRESOS POR EXPORTACIONES DE BIENES O SERVICIOS EXENTOS</field>
+                                </record>
+                                <record id="account_tax_code_6" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.1.1.2</field>
+                                     <field name="parent_id" ref="account_tax_code_4" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">INGRESOS POR VENTAS LOCALES DE BIENES O SERVICIOS EXENTOS</field>
+                                </record>
+                            <record id="account_tax_code_7" model="account.tax.code.template">
+                                 <field name="sign">1.0</field>
+                                 <field name="code">1.1.2</field>
+                                 <field name="parent_id" ref="account_tax_code_3" />
+                                 <field name="notprintable" eval="False" />
+                                 <field name="name">TOTAL INGRESOS POR OPERACIONES GRAVADAS</field>
+                            </record>
+                                <record id="account_tax_code_8" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.1.2.1</field>
+                                     <field name="parent_id" ref="account_tax_code_7" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">OPERACIONES GRAVADAS AL 18%</field>
+                                </record>
+                                <record id="account_tax_code_9" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.1.2.2</field>
+                                     <field name="parent_id" ref="account_tax_code_7" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">OPERACIONES GRAVADAS AL 11%</field>
+                                </record>
+                    <record id="account_tax_code_10" model="account.tax.code.template">
+                         <field name="sign">1.0</field>
+                         <field name="code">1.2</field>
+                         <field name="parent_id" ref="account_tax_code_2" />
+                         <field name="notprintable" eval="False" />
+                         <field name="name">IMPUESTO A PAGAR</field>
+                    </record>
+                            <record id="account_tax_code_11" model="account.tax.code.template">
+                                 <field name="sign">1.0</field>
+                                 <field name="code">1.2.1</field>
+                                 <field name="parent_id" ref="account_tax_code_10" />
+                                 <field name="notprintable" eval="False" />
+                                 <field name="name">TOTAL ITBIS COBRADO</field>
+                            </record>
+                                <record id="account_tax_code_12" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.2.1.1</field>
+                                     <field name="parent_id" ref="account_tax_code_11" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">ITBIS COBRADO 18%</field>
+                                </record>
+                                <record id="account_tax_code_13" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.2.1.2</field>
+                                     <field name="parent_id" ref="account_tax_code_11" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">ITBIS COBRADO 11%</field>
+                                </record>
+                            <record id="account_tax_code_14" model="account.tax.code.template">
+                                 <field name="sign">-1.0</field>
+                                 <field name="code">1.2.2</field>
+                                 <field name="parent_id" ref="account_tax_code_10" />
+                                 <field name="notprintable" eval="False" />
+                                 <field name="name">TOTAL ITBIS PAGADO</field>
+                            </record>
+                                <record id="account_tax_code_15" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.2.2.1</field>
+                                     <field name="parent_id" ref="account_tax_code_14" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">ITBIS PAGADO EN COMPRAS LOCALES</field>
+                                </record>
+                                <record id="account_tax_code_16" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.2.2.2</field>
+                                     <field name="parent_id" ref="account_tax_code_14" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">ITBIS PAGADO POR SERVICIOS DEDUCIBLES</field>
+                                </record>
+                                <record id="account_tax_code_17" model="account.tax.code.template">
+                                     <field name="sign">1.0</field>
+                                     <field name="code">1.2.2.3</field>
+                                     <field name="parent_id" ref="account_tax_code_14" />
+                                     <field name="notprintable" eval="False" />
+                                     <field name="name">ITBIS PAGADO EN IMPORTACIONES</field>
+                                </record>
+                <record id="account_tax_code_18" model="account.tax.code.template">
+                     <field name="sign">1.0</field>
+                     <field name="code">2</field>
+                     <field name="parent_id" ref="account_tax_code_1" />
+                     <field name="notprintable" eval="False" />
+                     <field name="name">RETENCIONES</field>
+                </record>
+                    <record id="account_tax_code_19" model="account.tax.code.template">
+                         <field name="sign">1.0</field>
+                         <field name="code">2.1</field>
+                         <field name="parent_id" ref="account_tax_code_18" />
+                         <field name="notprintable" eval="False" />
+                         <field name="name">SERVICIOS SUJETOS A RETENCION P. F. Y ENTIDADES NO LUCRATIVAS</field>
+                    </record>
+                        <record id="account_tax_code_20" model="account.tax.code.template">
+                             <field name="sign">1.0</field>
+                             <field name="code">2.1.1</field>
+                             <field name="parent_id" ref="account_tax_code_19" />
+                             <field name="notprintable" eval="False" />
+                             <field name="name">ITBIS SERVICIOS SUJETOS A RETENCION P. F. Y ENT. NO LUCRATIVAS</field>
+                        </record>
+	
+		</data>
+	</openerp>

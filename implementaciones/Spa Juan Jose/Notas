@@ -1,0 +1,31 @@
+Recetas de servicios - orden de produccion
+
+- Cliente que referecnia a otro cliente gana creditos para utilizarlo en sus servicio
+  Cuando el cliente nuevo llega y dice que fue referido por otro acumula puntos
+
+- Tiempos por servicios al momento de hacer checkin
+
+- master detail de los servicios que puede hacer el terapeuta
+
+- Timeline del espa del dia
+
+Hora | estilista 1 | estilista 2 | estilista 3 | estilista 4 |
+==============================================================
+1	  servicio-1
+2				    servicio-2
+3								   servicio-3
+4
+5
+6
+
+- ampliar horario de trabajo de estilista.
+
+- los servicios y productos ofrecen comision a los estilista
+
+- niveles de comision por estilista
+
+- reservacion de estilistas
+
+- tiempo de espera para reservacion
+
+- 5 marzo inicios

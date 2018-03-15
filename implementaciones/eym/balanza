@@ -1,0 +1,142 @@
+  10-01-01      Disponibilidad en Cajas
+  10-01-01-01   Fondo de Caja Chica
+  10-01-01-02-01Cajas en RD$
+  10-01-01-     Cajas en US$
+  10-           Prima en Caja US$
+  10-01-02      Efectivo en Bancos
+  10-01-02-     COOPSEMUE
+  10-01-02-     Banco Popular 54-78912-2
+  10-01-02-02-01Cuentas en RD$
+  10-01-02-     Banco del Progreso
+  10-02         Cuentas por Cobrar
+  10-02-02-01   Prestamos
+  10-02-99-03   Carnet
+  10-02-01      Cuentas por Cobrar Clientes
+  10-02-01-01   Cuentas por Cobrar Clientes en RD$
+  10-02-010301  Cheques Devueltos
+  10-02-02      Cuentas por Cobrar funcionarios y Empleados
+  10-02-02-02   RETENCIONES TSS
+  10-02-02-99   Otras Cuentas por Cobrar Funcionarios y Empleados
+  10-02-02-99-01Eneldo Antonio Serrata Peralta
+  10-02-99      Otras Cuentas por Cobrar
+  10-02-99-05   CARDNET PARA PENDIENTE DE CONCILIAR
+  10-03         Inventario
+  10-03-02      Inventario en AlmacÈn
+  10-04         Gastos Pagados por Anticipado
+  10-04-03      ComisiÛn Carnet
+  10-04-02      DirecciÛn General de Impuestos Internos
+  10-04-02-01   Anticipos en I.S.R.
+  10-04-02-02   ITBIS PAGADO EN COMPRAS LOCALES
+  10-04-02-03   ITBIS Pagado en Tarjeta Carnet
+  10-04-02-05   ITBIS PAGADO POR SERVICIOS DEDUCIBLES
+  12-03         Mobiliario y Equipos de Oficina
+  12-03-01      Mobiliario y Equipos de Oficina
+  12-03-02      Deprec. Acumulada Mobiliario y Equipos de Oficina                     279,606.73
+  12-04         Equipos de CÛmputos y Telecomunicaciones                 1,463,574.00
+  12-04-01      Equipos de CÛmputos y Telecomunicaciones                   970,215.09
+  12-04-02      Deprec. Acumulada Equipos de CÛmputos y Telecomun                     493,358.91
+  12-05         Equipos de Transporte                                      295,999.00
+  12-05-01      Equipos de Transporte Livianos                             148,000.00
+  12-05-02      Deprec. Acumulada Equipos de Transporte Livianos                      147,999.00
+  12-07         Otros Activos Depreciables                               1,938,458.45
+  12-07-01      Otros Activos Depreciables                               1,077,993.80
+  12-07-02      Deprec. Acumulada Otros Activos Depreciables                          860,464.65
+  12-09         Activos Fijos en Proceso                                     3,690.33
+  12-09-03      Mobiliario y Equipos de Oficina en Proceso de Instala          580.00
+  12-09-06      Maquinarias y Equipos en Proceso de InstalaciÛn              3,110.33
+  19            Otros Activos                                                9,000.00
+  19-04         Obras de Arte                                                9,000.00
+  20-01         Documentos por Pagar a Corto Plazo                                     5,112,199.30
+  20-01-01      PorciÛn corriente de Deuda a largo plazo                               5,112,199.30
+  20-02-01      Cuentas por Pagar Suplidores                                          53,096,622.74
+  20-02-01-01-01Suplidores Locales en RD$                                           (13,116,816.26)
+  20-02-01-     Cuentas por Pagar US$                                                  (287,265.00)
+  20-           Suplidores Locales por Pagar US$                                         414,668.20
+  20-           Suplidores Locales Prima por Pagar US$                                66,086,035.80
+  20-02-01-02-01CUENTAS POR PAGAR US$ CONTROL                                          1,612,541.08
+  20-02-01-     Prima por Pagar US$                                                    1,612,541.08
+  20-02-03      Cuentas por Pagar Funcionarios y Empleados                           (3,031,299.35)
+  20-02-03-01   Sueldos y Salarios                                                   (2,902,396.64)
+  20-02-03-02   Comisiones Funcionarios y Empleados                                     (15,555.56)
+  20-02-03-03   Salario de Navidad                                                       176,147.00
+  20-02-03-04   BonificaciÛn                                                           (282,227.71)
+  20-02-03-99   Otras Cuentas por Pagar Funcionarios y Empleados                         (7,266.44)
+  20-02-04      Cuentas por Pagar al Estado Dominicano                                17,065,591.81
+  20-02-04-01-01CUENTA POR PAGAR TSS                                                   (458,816.95)
+  20-02-04-01-02AdministraciÛn Fondo de Pensiones (AFP)                                    9,432.21
+  20-02-04-     ITBIS de Clientes por Pagar                                           17,113,512.73
+  20-02-04-     RETENCION A PERSONAS FÕSICAS (18%)                                       188,578.13
+  20-02-04-     RetenciÛn I.S.R. Empleados                                              (53,138.82)
+  20-02-04-     RetenciÛn I.S.R. Alquileres (10%)                                         42,000.00
+  20-02-04-     RetenciÛn I.S.R. Honorarios (10%)                                         48,715.19
+  20-02-04-03   Impuesto Sobre la Renta Diferido                                         197,439.32
+  20-02-04-04   INFOTEP                                                                 (22,130.00)
+  20-02-99      Otras Cuentas por Pagar a Corto Plazo                                  1,513,024.26
+  20-02-99-01   Caja Chica                                                                39,458.15
+  20-02-99-02   CrÈditos por DevoluciÛn                                                1,190,240.64
+  20-02-99-03   Cargos Bancarios por Pagar                                               284,788.59
+  20-02-99-04   COMISION DE CARDNET POR PAGAR                                            (1,463.12)
+  3             Capital                                                                  300,000.00
+  30            Capital Social Suscrito y Pagado                                         300,000.00
+  33            Reservas                                                               1,885,300.00
+  33-01         Reserva Legal                                                             30,000.00
+  33-02         Otras Reservas                                                         1,855,300.00
+  34            Resultado                                                              1,261,002.95
+  34-01         Resultado Acumulado                                                      913,738.54
+  34-02         Resultado del Periodo                                                    347,264.41
+  40            Ingresos en Operaciones                                              205,272,161.04
+  40-01         Ventas de Contado                                                    166,724,390.52
+  40-02         Ventas a CrÈdito                                                      34,034,665.38
+  40-03         VENTAS A ZONAS FRANCA                                                  1,597,587.16
+  40-99         Otros Ingresos Operacionales                                           2,915,517.98
+  47            Ingresos Financieros                                                      22,305.06
+  47-06         Intereses Ganados en Cuentas de Ahorros                                   22,305.06
+  49            Ingresos Extraordinarios                                               3,725,713.49
+  49-01         Ganancia en Ajuste por Tipo de Cambio                                  3,622,588.48
+  49-99         Otros Ingresos                                                           103,125.01
+  5             Costos                                                 191,514,239.58
+  50            Costos Ventas                                          194,965,081.53
+  51            Descuentos sobre Compras                               (3,450,841.95)
+  61-01         GASTOS FUNCIONARIOS Y EMPLEADOS                          7,262,419.72
+  61-01-01      SALARIOS                                                 3,738,280.11
+  61-01-02      HORAS EXTRAS EMPLEADOS                                   1,287,271.23
+  61-01-04      RETRIBUCIONES COMPLEMENTARIAS                              204,054.05
+  61-01-05      Salario de Navidad                                         361,591.39
+  61-01-07      Preaviso y CesantÌa                                        380,001.44
+  61-01-10      APORTE INFOTEP                                              34,129.00
+  61-01-11      APORTE PLAN B¡SICO DE SALUD (SFS)                          241,971.78
+  61-01-12      APORTE PLAN DE PENSIONES (AFP)                             242,313.43
+  61-01-13      Aporte Riesgos Laborales (ARL)                              37,269.94
+  61-01-14      Seguro Medico y de Vida Privado                            213,339.34
+  61-01-16      Dietas y Vi·ticos a Empleados                              522,198.01
+  61-02         Otros Gastos de AdministraciÛn                           4,445,387.97
+  61-02-01      Agua, Luz y Basura                                       1,156,299.93
+  61-02-02      Telecomunicaciones                                         813,935.67
+  61-02-04      Seguros Generales                                          671,098.22
+  61-02-06-01   Honorarios por Servicios Profesionales Sociedades          177,975.00
+  61-02-06-03   Comisiones por Venta a Terceros Personas FÌsicas            23,083.44
+  61-02-08      Combustible y Lubricantes VehÌculos                        497,746.14
+  61-02-14      Mantenimiento de Activos Fijos                               9,053.38
+  61-02-14-01   MANTENIMIENTO DE PLANTA ELECTRICA                            1,500.00
+  61-02-14-02   MANTENIMIENTO DE VEHICULOS                                  83,990.36
+  61-02-16      Publicidad                                                  21,100.00
+  61-02-17      Vi·ticos y RepresentaciÛn                                   79,034.32
+  61-02-20      Material Gastable y PapelerÌa                              325,813.79
+  61-02-20-01   MATERIAL GASTABLE DESECHABLES                              192,801.49
+  61-02-21      Material de Limpieza                                        42,669.12
+  61-02-22      Atenciones a Clientes                                      251,021.18
+  61-02-25      Seguridad ElectrÛnica                                       21,000.00
+  61-02-30      Gastos de RepresentaciÛn                                    32,262.07
+  61-02-34-01   Otros Gastos Varios                                        (2,315.86)
+  61-02-36      Consulta de Datos e FormaciÛn Crediticia                    47,319.72
+  61-02-05      Alquileres                                                 903,000.00
+  61-02-05-01   Alquiler de Locales                                        924,000.00
+  61-02-05-03   Alquiler de VehÌculos                                     (21,000.00)
+  61-02-98      Gastos No Deducible ISR                                  1,786,066.00
+  61-02-98-03   Penalidades, Mora e InterÈs Indemnizatorios                 90,021.60
+  61-02-99      Otros Gastos Generales y Administrativos                 1,696,044.40
+  62            Gastos Financieros                                       5,750,612.25
+  62-01         Cargos Bancarios                                           589,061.77
+  62-02         Cargos Carnet                                            2,367,440.40
+  62-04         Intereses sobre Prestamos Bancarios                      1,835,153.61
+  62-05         Intereses sobre Prestamos Particulares                     958,956.47

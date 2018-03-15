@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Test framework &#8212; OpenERP Server Developers Documentation 7.0b documentation</title>
+    
+    <link rel="stylesheet" href="_static/flasky.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '7.0b',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Miscellanous" href="06_misc.html" />
+    <link rel="prev" title="Security in OpenERP: users, groups" href="04_security.html" />
+   
+  
+  <link media="only screen and (max-device-width: 480px)" href="_static/small_flask.css" type= "text/css" rel="stylesheet" />
+
+  </head>
+  <body role="document">
+  
+  
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="06_misc.html" title="Miscellanous"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="04_security.html" title="Security in OpenERP: users, groups"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">OpenERP Server Developers Documentation 7.0b documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="test-framework">
+<span id="id1"></span><h1>Test framework<a class="headerlink" href="#test-framework" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the YAML-based tests, OpenERP uses the <a class="reference external" href="http://pypi.python.org/pypi/unittest2">unittest2</a> testing
+framework to test both the core <code class="docutils literal"><span class="pre">openerp</span></code> package and its addons. For the
+core and each addons, tests are divided between three (overlapping) sets:</p>
+<ol class="arabic simple">
+<li>A test suite that comprises all the tests that can be run right after the
+addons is installed (or, for the core, right after a database is created).
+That suite is called <code class="docutils literal"><span class="pre">fast_suite</span></code> and must contain only tests that can be run
+frequently. Actually most of the tests should be considered fast enough to be
+included in that <code class="docutils literal"><span class="pre">fast_suite</span></code> list and only tests that take a long time to run
+(e.g. more than a minute) should not be listed. Those long tests should come up
+pretty rarely.</li>
+<li>A test suite called <code class="docutils literal"><span class="pre">checks</span></code> provides sanity checks. These tests are
+invariants that must be full-filled at any time. They are expected to always
+pass: obviously they must pass right after the module is installed (i.e. just
+like the <code class="docutils literal"><span class="pre">fast_suite</span></code> tests), but they must also pass after any other module is
+installed, after a migration, or even after the database was put in production
+for a few months.</li>
+<li>The third suite is made of all the tests: those provided by the two above
+suites, but also tests that are not explicitely listed in <code class="docutils literal"><span class="pre">fast_suite</span></code> or
+<code class="docutils literal"><span class="pre">checks</span></code>. They are not explicitely listed anywhere and are discovered
+automatically.</li>
+</ol>
+<p>As the sanity checks provide stronger guarantees about the code and database
+structure, new tests must be added to the <code class="docutils literal"><span class="pre">checks</span></code> suite whenever it is
+possible. Said with other words: one should try to avoid writing tests that
+assume a freshly installed/unaltered module or database.</p>
+<p>It is possible to have tests that are not listed in <code class="docutils literal"><span class="pre">fast_suite</span></code> or
+<code class="docutils literal"><span class="pre">checks</span></code>.  This is useful if a test takes a lot of time. By default, when
+using the testing infrastructure, tests should run fast enough so that people
+can use them frequently. One can also use that possiblity for tests that
+require some complex setup before they can be successfuly run.</p>
+<p>As a rule of thumb when writing a new test, try to add it to the <code class="docutils literal"><span class="pre">checks</span></code>
+suite. If it really needs that the module it belongs to is freshly installed,
+add it to <code class="docutils literal"><span class="pre">fast_suite</span></code>. Finally, if it can not be run in an acceptable time
+frame, don&#8217;t add it to any explicit list.</p>
+<div class="section" id="writing-tests">
+<h2>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline">¶</a></h2>
+<p>The tests must be developed under <code class="docutils literal"><span class="pre">&lt;addons-name&gt;.tests</span></code> (or <code class="docutils literal"><span class="pre">openerp.tests</span></code>
+for the core).  For instance, with respect to the tests, a module <code class="docutils literal"><span class="pre">foo</span></code>
+should be organized as follow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="o">/</span>
+  <span class="n">__init__</span><span class="o">.</span><span class="n">py</span> <span class="c1"># does not import .tests</span>
+  <span class="n">tests</span><span class="o">/</span>
+    <span class="n">__init__</span><span class="o">.</span><span class="n">py</span> <span class="c1"># import some of the tests sub-modules, and</span>
+                <span class="c1"># list them in fast_suite or checks</span>
+    <span class="n">test_bar</span><span class="o">.</span><span class="n">py</span> <span class="c1"># contains unittest2 classes</span>
+    <span class="n">test_baz</span><span class="o">.</span><span class="n">py</span> <span class="c1"># idem</span>
+    <span class="o">...</span> <span class="ow">and</span> <span class="n">so</span> <span class="n">on</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>The two explicit lists of tests are thus the variables <code class="docutils literal"><span class="pre">foo.tests.fast_suite</span></code>
+and <code class="docutils literal"><span class="pre">foo.tests.checks</span></code>. As an example, you can take a look at the
+<code class="docutils literal"><span class="pre">openerp.tests</span></code> module (which follows exactly the same conventions even if it
+is not an addons).</p>
+<p>Note that the <code class="docutils literal"><span class="pre">fast_suite</span></code> and <code class="docutils literal"><span class="pre">checks</span></code> variables are really lists of
+module objects. They could be directly unittest2 suite objects if necessary in
+the future.</p>
+</div>
+<div class="section" id="running-the-tests">
+<h2>Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this headline">¶</a></h2>
+<p>To run the tests (see <a class="reference internal" href="#test-framework"><span class="std std-ref">above</span></a> to learn how tests are
+organized), the simplest way is to use the <code class="docutils literal"><span class="pre">oe</span></code> command (provided by the
+<code class="docutils literal"><span class="pre">openerp-command</span></code> project).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">oe</span> <span class="n">run</span><span class="o">-</span><span class="n">tests</span> <span class="c1"># will run all the fast_suite tests</span>
+<span class="o">&gt;</span> <span class="n">oe</span> <span class="n">run</span><span class="o">-</span><span class="n">tests</span> <span class="o">-</span><span class="n">m</span> <span class="n">openerp</span> <span class="c1"># will run all the fast_suite tests defined in `openerp.tests`</span>
+<span class="o">&gt;</span> <span class="n">oe</span> <span class="n">run</span><span class="o">-</span><span class="n">tests</span> <span class="o">-</span><span class="n">m</span> <span class="n">sale</span> <span class="c1"># will run all the fast_suite tests defined in `openerp.addons.sale.tests`</span>
+<span class="o">&gt;</span> <span class="n">oe</span> <span class="n">run</span><span class="o">-</span><span class="n">tests</span> <span class="o">-</span><span class="n">m</span> <span class="n">foo</span><span class="o">.</span><span class="n">test_bar</span> <span class="c1"># will run the tests defined in `openerp.addons.foo.tests.test_bar`</span>
+</pre></div>
+</div>
+<p>In addition to the above possibilities, when invoked with a non-existing module
+(or module.sub-module) name, oe will reply with a list of available test
+sub-modules.</p>
+<p>Depending on the <a class="reference external" href="http://pypi.python.org/pypi/unittest2">unittest2</a> class that is used to write the tests (see
+<code class="xref py py-mod docutils literal"><span class="pre">openerp.tests.common</span></code> for some helper classes that you can re-use), a
+database may be created before the test is run, and the module providing the
+test will be installed on that database.</p>
+<p>Because creating a database, installing modules, and then dropping it is
+expensive, it is possible to interleave the run of the <code class="docutils literal"><span class="pre">fast_suite</span></code> tests
+with the initialization of a new database: the dabase is created, and after
+each requested module is installed, its fast_suite tests are run. The database
+is thus created and dropped (and the modules installed) only once.</p>
+</div>
+<div class="section" id="testcase-subclasses">
+<h2>TestCase subclasses<a class="headerlink" href="#testcase-subclasses" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <cite>setUp</cite> and <cite>tearDown</cite> methods are not part of the tests. Uncaught
+exceptions in those methods are errors, not test failures. In particular,
+a failing <cite>setUp</cite> will not be followed by a <cite>tearDown</cite> causing any
+allocated resource in the <cite>setUp</cite> to not be released by the <cite>tearDown</cite>.</p>
+<p class="last">In the <code class="xref py py-class docutils literal"><span class="pre">openerp.tests.common.TransactionCase</span></code> and
+<code class="xref py py-class docutils literal"><span class="pre">openerp.tests.common.SingleTransactionCase</span></code>, this means the
+test suite can hang because of unclosed cursors.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><p class="logo"><a href="index.html">
+  <img class="logo" src="_static/openerp.png" alt="Logo"/>
+</a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Test framework</a><ul>
+<li><a class="reference internal" href="#writing-tests">Writing tests</a></li>
+<li><a class="reference internal" href="#running-the-tests">Running the tests</a></li>
+<li><a class="reference internal" href="#testcase-subclasses">TestCase subclasses</a></li>
+</ul>
+</li>
+</ul>
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="04_security.html" title="previous chapter">Security in OpenERP: users, groups</a></li>
+      <li>Next: <a href="06_misc.html" title="next chapter">Miscellanous</a></li>
+  </ul></li>
+</ul>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/05_test_framework.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+    &copy; Copyright 2012, OpenERP s.a.
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> and a modified <a href="https://github.com/mitsuhiko/flask-sphinx-themes">Flask theme</a>.
+  </div>
+  
+  </body>
+</html>

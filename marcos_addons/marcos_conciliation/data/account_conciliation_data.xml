@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="1">
+        <record forcecreate="True" id="marcos_decimal_exchange" model="decimal.precision">
+            <field name="name">Marcos Exchange</field>
+            <field name="digits" eval="5"/>
+        </record>
+    </data>
+
+
+    <data noupdate="1">
+        <!-- Sequences for account.transfer -->
+        <record id="seq_type_account_transaction" model="ir.sequence.type">
+            <field name="name">Transacciones Bancarias</field>
+            <field name="code">account.trasaction</field>
+        </record>
+        <record id="seq_account_transaction" model="ir.sequence">
+            <field name="name">Secuencia de transactiones bancarias</field>
+            <field name="code">account.trasaction</field>
+            <field name="prefix">TRAN</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_type_account_conciliation" model="ir.sequence.type">
+            <field name="name">Conciliation</field>
+            <field name="code">account.conciliation</field>
+        </record>
+        <record id="seq_account_conciliation" model="ir.sequence">
+            <field name="name">Conciliationr</field>
+            <field name="code">account.conciliation</field>
+            <field name="prefix">CONC</field>
+            <field name="padding">6</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</openerp>

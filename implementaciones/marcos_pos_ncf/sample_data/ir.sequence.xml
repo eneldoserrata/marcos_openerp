@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="True">
+        <record model='ir.sequence' id='ir_sequence_41'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>01/%(year)s/</field>
+                <field name='name'>Gastos de personal</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_42'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>02/%(year)s/</field>
+                <field name='name'>Gastos por trabajo, suministros y servicios</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_43'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>03/%(year)s/</field>
+                <field name='name'>Arrendamientos</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_44'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>04/%(year)s/</field>
+                <field name='name'>Gastos de Activos Fijos</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_45'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>05/%(year)s/</field>
+                <field name='name'>Gastos de Representación</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_46'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>06/%(year)s/</field>
+                <field name='name'>Otras Deducciones Admitidas</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_47'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>07/%(year)s/</field>
+                <field name='name'>Gastos Financieros</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_48'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>08/%(year)s/</field>
+                <field name='name'>Gastos Extraordinarios</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_49'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>09/%(year)s/</field>
+                <field name='name'>Compras y Gastos que forman parte del Costo de Venta</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_50'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>10/%(year)s/</field>
+                <field name='name'>Adquisiciones de Activos</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_32'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>101/%(year)s/</field>
+                <field name='name'>Facturas que generan crédito fiscal y/o sustentan costos y gasto</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_33'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>102/%(year)s/</field>
+                <field name='name'>Facturas a consumidores finales (sin valor de crédito fiscal)</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_34'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>103/%(year)s/</field>
+                <field name='name'>Notas de credito factura</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_35'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>104/%(year)s/</field>
+                <field name='name'>Nota de debito factura</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_51'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>11/%(year)s/</field>
+                <field name='name'>Gastos de Seguro</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_36'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>111/%(year)s/</field>
+                <field name='name'>Registro de proveedores informales</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_37'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>113/%(year)s/</field>
+                <field name='name'>Registro de gastos menores</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_38'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>114/%(year)s/</field>
+                <field name='name'>Registro regímenes especiales de tributación</field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_39'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>115/%(year)s/</field>
+                <field name='name'>Comprobantes gubernamentales </field>
+        </record> 
+        <record model='ir.sequence' id='ir_sequence_40'>
+                <field name='padding' eval='4'/>
+                <field name='prefix'>BAN1/%(year)s/</field>
+                <field name='name'>Banco Popular 54789122</field>
+        </record> 
+    </data>
+</openerp>
+        

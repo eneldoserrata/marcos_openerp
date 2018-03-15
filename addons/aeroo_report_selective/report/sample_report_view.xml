@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!--
+            Sample order selective report
+        -->
+        <record id="action_sample_selective_order" model="ir.actions.report.xml">
+            <field name="name">Sample order selective</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">aeroo_report_selective.order.report.aeroo</field>
+            <field name="auto">TRUE</field>
+            <field name="report_type">aeroo</field>
+            <field name="report_file">aeroo_report_selective/report/sample_order.odt</field>
+            <field name="report_rml">aeroo_report_selective/report/sample_order.odt</field>
+            <field name="parser_loc">aeroo_report_selective/report/selective_parser.py</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+            <field name="in_format">oo-odt</field>
+        </record>
+        
+        <!--
+            Sample invoice selective report
+        -->
+        <record id="action_sample_selective_invoice" model="ir.actions.report.xml">
+            <field name="name">Sample invoice selective</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">account.invoice</field>
+            <field name="report_name">aeroo_report_selective.invoice.report.aeroo</field>
+            <field name="auto">TRUE</field>
+            <field name="report_type">aeroo</field>
+            <field name="report_file">aeroo_report_selective/report/sample_invoice.odt</field>
+            <field name="report_rml">aeroo_report_selective/report/sample_invoice.odt</field>
+            <field name="parser_loc">aeroo_report_selective/report/selective_parser.py</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+            <field name="in_format">oo-odt</field>
+        </record>
+
+        <!--
+            Menus
+        -->
+        <record id="entry_order_aeroo" model="ir.values">
+            <field name="name">aeroo_report_selective.order.report.aeroo</field>
+            <field name="key">action</field>
+            <field name="key2">client_print_multi</field>
+            <field name="model">sale.order</field>
+            <field name="value" eval="'ir.actions.report.xml,'+str(ref('aeroo_report_selective.action_sample_selective_order'))"/>
+            <field name="object">TRUE</field>
+        </record>
+        
+        <record id="entry_invoice_aeroo" model="ir.values">
+            <field name="name">aeroo_report_selective.invoice.report.aeroo</field>
+            <field name="key">action</field>
+            <field name="key2">client_print_multi</field>
+            <field name="model">account.invoice</field>
+            <field name="value" eval="'ir.actions.report.xml,'+str(ref('aeroo_report_selective.action_sample_selective_invoice'))"/>
+            <field name="object">TRUE</field>
+        </record>
+        
+    </data>
+</openerp>

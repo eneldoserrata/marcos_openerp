@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_bank_conciliation,account.bank.conciliation,model_account_bank_conciliation,point_of_sale.group_pos_manager,1,1,1,1
+access_account_bank_conciliation_user,account.bank.conciliation user,model_account_bank_conciliation,group_conciliation_user,1,1,1,1
+access_account_bank_conciliation_manager,account.bank.conciliation manager,model_account_bank_conciliation,group_conciliation_manager,1,1,1,1
+access_account_bank_transactions,account.bank.transactions,model_account_bank_transactions,point_of_sale.group_pos_manager,1,1,1,1
+access_account_bank_transactions_user,account.bank.transactions user,model_account_bank_transactions,group_conciliation_user,1,1,1,1
+access_account_bank_transactions_manager,account.bank.transactions manager,model_account_bank_transactions,group_conciliation_manager,1,1,1,1

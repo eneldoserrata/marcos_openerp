@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery="tr.header-row" t-operation="before">
+            <tr class="selection-area">
+                <td style="padding-top: 7px; padding-left:5px;">
+                    <input name="disc_amount" id="disc_amount" type="text" placeholder="Desc/Recargo"
+                            style="width: 95px; height: 15px; margin-top: -6px; font-size: 13px; border: 1px solid #CCCCCC; 
+                            border-radius: 3px;" />
+                    <span id="ok_button" class="button_select">Aplicar</span>
+                    <span id="reset_button" class="button_select">Borrar</span>
+                    <span id="precuenta" class="button_select">Precuenta</span>
+                </td>
+            </tr>
+        </t>
+    </t>
+</templates>

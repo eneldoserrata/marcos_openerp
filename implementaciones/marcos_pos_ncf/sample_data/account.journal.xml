@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="True">
+        <record model='account.journal' id='account_journal_21'>
+                <field name='sequence_id' ref='ir_sequence_41'/>
+                <field name='code'>01</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos de personal</field>
+        </record> 
+        <record model='account.journal' id='account_journal_22'>
+                <field name='sequence_id' ref='ir_sequence_42'/>
+                <field name='code'>02</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos por trabajo, suministros y servicios</field>
+        </record> 
+        <record model='account.journal' id='account_journal_23'>
+                <field name='sequence_id' ref='ir_sequence_43'/>
+                <field name='code'>03</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Arrendamientos</field>
+        </record> 
+        <record model='account.journal' id='account_journal_24'>
+                <field name='sequence_id' ref='ir_sequence_44'/>
+                <field name='code'>04</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos de Activos Fijos</field>
+        </record> 
+        <record model='account.journal' id='account_journal_25'>
+                <field name='sequence_id' ref='ir_sequence_45'/>
+                <field name='code'>05</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos de Representación</field>
+        </record> 
+        <record model='account.journal' id='account_journal_26'>
+                <field name='sequence_id' ref='ir_sequence_46'/>
+                <field name='code'>06</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Otras Deducciones Admitidas</field>
+        </record> 
+        <record model='account.journal' id='account_journal_27'>
+                <field name='sequence_id' ref='ir_sequence_47'/>
+                <field name='code'>07</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos Financieros</field>
+        </record> 
+        <record model='account.journal' id='account_journal_28'>
+                <field name='sequence_id' ref='ir_sequence_48'/>
+                <field name='code'>08</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos Extraordinarios</field>
+        </record> 
+        <record model='account.journal' id='account_journal_29'>
+                <field name='sequence_id' ref='ir_sequence_49'/>
+                <field name='code'>09</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Compras y Gastos que forman parte del Costo de Venta</field>
+        </record> 
+        <record model='account.journal' id='account_journal_30'>
+                <field name='sequence_id' ref='ir_sequence_50'/>
+                <field name='code'>10</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Adquisiciones de Activos</field>
+        </record> 
+        <record model='account.journal' id='account_journal_12'>
+                <field name='sequence_id' ref='ir_sequence_32'/>
+                <field name='code'>101</field>
+                <field name='type'>sale</field>
+                <field name='name'>Facturas que generan crédito fiscal y/o sustentan costos y gasto</field>
+        </record> 
+        <record model='account.journal' id='account_journal_13'>
+                <field name='sequence_id' ref='ir_sequence_33'/>
+                <field name='code'>102</field>
+                <field name='type'>sale</field>
+                <field name='name'>Facturas a consumidores finales (sin valor de crédito fiscal)</field>
+        </record> 
+        <record model='account.journal' id='account_journal_14'>
+                <field name='sequence_id' ref='ir_sequence_34'/>
+                <field name='code'>103</field>
+                <field name='type'>sale_refund</field>
+                <field name='name'>Notas de credito factura</field>
+        </record> 
+        <record model='account.journal' id='account_journal_15'>
+                <field name='sequence_id' ref='ir_sequence_35'/>
+                <field name='code'>104</field>
+                <field name='type'>sale</field>
+                <field name='name'>Nota de debito factura</field>
+        </record> 
+        <record model='account.journal' id='account_journal_31'>
+                <field name='sequence_id' ref='ir_sequence_51'/>
+                <field name='code'>11</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Gastos de Seguro</field>
+        </record> 
+        <record model='account.journal' id='account_journal_16'>
+                <field name='sequence_id' ref='ir_sequence_36'/>
+                <field name='code'>111</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Registro de proveedores informales</field>
+        </record> 
+        <record model='account.journal' id='account_journal_17'>
+                <field name='sequence_id' ref='ir_sequence_37'/>
+                <field name='code'>113</field>
+                <field name='type'>purchase</field>
+                <field name='name'>Registro de gastos menores</field>
+        </record> 
+        <record model='account.journal' id='account_journal_18'>
+                <field name='sequence_id' ref='ir_sequence_38'/>
+                <field name='code'>114</field>
+                <field name='type'>sale</field>
+                <field name='name'>Registro regímenes especiales de tributación</field>
+        </record> 
+        <record model='account.journal' id='account_journal_19'>
+                <field name='sequence_id' ref='ir_sequence_39'/>
+                <field name='code'>115</field>
+                <field name='type'>sale</field>
+                <field name='name'>Comprobantes gubernamentales </field>
+        </record> 
+        <record model='account.journal' id='account_journal_20'>
+                <field name='sequence_id' ref='ir_sequence_40'/>
+                <field name='code'>BAN1</field>
+                <field name='type'>bank</field>
+                <field name='name'>Banco Popular 54789122</field>
+        </record> 
+    </data>
+</openerp>
+        

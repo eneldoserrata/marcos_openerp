@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!--
+        Resource: account.tax.code.template
+        Account tax code templates for Dominican Republic
+        -->
+        <record id="account_chart_template_a" model="account.chart.template">
+            <field name="name">Catálogo de Cuentas Empresas Privadas</field>
+            <field name="account_root_id" ref="account_account_template_standard_0"/>
+            <field name="tax_code_root_id" ref="account_tax_code_1"/>
+            <field name="bank_account_view_id" ref="account_account_template_standard_112"/>
+            <field name="property_account_receivable" ref="account_account_template_standard_11301"/>
+            <field name="property_account_payable" ref="account_account_template_standard_2101"/>
+            <field name="property_account_income" ref="account_account_template_standard_4101"/>
+            <field name="property_account_expense" ref="account_account_template_standard_5201"/>
+            <field name="property_account_income_categ" ref="account_account_template_standard_4101"/>
+            <field name="property_account_expense_categ" ref="account_account_template_standard_5201"/>
+        </record>
+
+        <record id="account_chart_template_a1" model="account.chart.template">
+            <field name="name">Catálogo de Cuentas Instituciones Descentralizadas y Autónomas</field>
+            <field name="account_root_id" ref="account_account_template_dgcc_0"/>
+            <field name="tax_code_root_id" ref="account_tax_code_1"/>
+            <field name="bank_account_view_id" ref="account_account_template_dgcc_110101"/>
+            <field name="property_account_receivable" ref="account_account_template_dgcc_1104020001"/>
+            <field name="property_account_payable" ref="account_account_template_dgcc_2103020002"/>
+            <field name="property_account_income" ref="account_account_template_dgcc_4102980998"/>
+            <field name="property_account_expense" ref="account_account_template_dgcc_5105010001"/>
+            <field name="property_account_income_categ" ref="account_account_template_dgcc_4102980998"/>
+            <field name="property_account_expense_categ" ref="account_account_template_dgcc_5105010001"/>
+        </record>
+
+        <record id="account_chart_template_eym" model="account.chart.template">
+            <field name="name">Catálogo de Cuentas EYM</field>
+            <field name="account_root_id" ref="eym_account_account_1"/>
+            <field name="tax_code_root_id" ref="account_tax_code_1"/>
+            <field name="bank_account_view_id" ref="eym_account_account_45"/>
+            <field name="property_account_receivable" ref="eym_account_account_52"/>
+            <field name="property_account_payable" ref="eym_account_account_1998"/>
+            <field name="property_account_income" ref="eym_account_account_2070"/>
+            <field name="property_account_expense" ref="eym_account_account_2101"/>
+            <field name="property_account_income_categ" ref="eym_account_account_2070"/>
+            <field name="property_account_expense_categ" ref="eym_account_account_2101"/>
+        </record>
+    </data>
+</openerp>

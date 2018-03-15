@@ -1,0 +1,74 @@
+{
+  "receipt": {
+    "orderlines": [
+      {
+        "quantity": 1,
+        "unit_name": "Unidad(es)",
+        "price": 1.48,
+        "discount": 0,
+        "product_name": "Lays Pickles 250 g",
+        "price_display": 1.48,
+        "price_with_tax": 1.48,
+        "price_without_tax": 1.48,
+        "tax": 0,
+        "product_description": false,
+        "product_description_sale": false
+      }
+    ],
+    "paymentlines": [
+      {
+        "amount": 1.48,
+        "journal": "Bank Journal - (test) (DOP)"
+      }
+    ],
+    "subtotal": 1.48,
+    "total_with_tax": 1.48,
+    "total_without_tax": 1.48,
+    "total_tax": 0,
+    "total_paid": 1.48,
+    "total_discount": 0,
+    "change": 0,
+    "name": "Order 1391921149587",
+    "client": null,
+    "invoice_id": null,
+    "cashier": "Administrator",
+    "date": {
+      "year": 2014,
+      "month": 1,
+      "date": 9,
+      "day": 0,
+      "hour": 0,
+      "minute": 46
+    },
+    "company": {
+      "email": "info@yourcompany.com",
+      "website": "www.yourcompany.com",
+      "company_registry": false,
+      "contact_address": "\n\n  \n",
+      "vat": false,
+      "name": "Your Company",
+      "phone": false
+    },
+    "shop": {
+      "name": "Your Company"
+    },
+    "currency": {
+      "rounding": 0.01,
+      "position": "before",
+      "symbol": "RD$",
+      "id": 74,
+      "accuracy": 4
+    }
+  },
+  "brand": "epson",
+  "ncf": "A010010010100000025",
+  "rnc": "00111616876",
+  "fiscal_type": "fiscal",
+  "client": "Cliente de contado",
+  "branch": 1,
+  "uid": 1,
+  "ncf_reference": null,
+  "oid": [
+    100
+  ]
+}

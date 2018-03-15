@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--modifica el modulo de punto de ventas para agregar campos de la impresora-->
+        <record model="ir.ui.view" id="marcos_point_of_sale_view_pos_config_form">
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <field name="iface_print_via_proxy" position="after">
+                    <field name="iface_printer_host"/>
+                    <field name="iface_printer_model"/>
+                </field>
+            </field>
+        </record>
+
+        <!--agrega al form de tiendas las secuencias para ncf-->
+        <record model="ir.ui.view" id="marcos_view_shop_form">
+            <field name="model">sale.shop</field>
+            <field name="inherit_id" ref="sale.view_shop_form"/>
+            <field name="arch" type="xml">
+                <group name="shop" position="after">
+                    <group>
+                        <field name="fiscal_id"/>
+                        <field name="final_id"/>
+                        <field name="especiales_id"/>
+                        <field name="gubernamentales_id"/>
+                        <field name="notas_credito_id"/>
+                        <field name="default_partner_id"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <!--modifica el modulo de partner para validar rnc y posicion fiscal-->
+        <record model="ir.ui.view" id="marcos_view_partner_form">
+            <field name="name">res.partner.view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="property_account_position" position="replace"/>
+                    <field name="ref" position="replace"/>
+                    <field name="parent_id" position="before">
+                        <field name="ref" placeholder="RNC/Cédula"/>
+                        <div attrs="{'invisible': [('is_company','=', False)]}">
+                            <field name="property_account_position" placeholder="Posición fiscal"/>
+                        </div>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <!--greega campo fiscal type para identificar la secuencia para comprobantes tipo facturas-->
+       <record model="ir.ui.view" id="marcos_account_view_account_position_form">
+            <field name="name">marcos.account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="fiscal_type"/>
+                </field>
+            </field>
+        </record>
+
+        <!--define si el producto requiere numero de serie al momento de la venta-->
+        <record id="acespritech_product_form" model="ir.ui.view">
+            <field name="name">product.form.view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="point_of_sale.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="available_in_pos" position="after">
+                    <field name="serial_required"/>
+                </field>
+            </field>
+        </record>
+
+
+         <record model="ir.ui.view" id="marcos_view_pos_pos_form">
+            <field name="name">marcos_pos_order_form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//form[@string="Point of Sale Orders"]' position='attributes'>
+                    <!--<attribute name="create" >false</attribute>-->
+                    <!--<attribute name="edit">false</attribute>-->
+                </xpath>
+                <!--<xpath expr="//button[@string='Payment']" position="replace"/>-->
+                <!--<xpath expr="//button[@string='Return Products']" position="replace"/>-->
+                <xpath expr="//field[@name='state']" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,paid,done,invoiced,ipf" statusbar_colors='{"invoiced":"red"}'/>
+                </xpath>
+                <xpath expr="//button[@string='Return Products']" position="before">
+                    <span states="invoiced">
+                        <widget type="printipf"/>
+                    </span>
+                </xpath>
+
+            </field>
+         </record>
+
+        <record model="ir.ui.view" id="point_of_sale_view_pos_order_tree">
+            <field name="name">Marcos Orders</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr='//tree[@string="POS Orders"]' position='attributes'>
+                    <!--<attribute name="create">false</attribute>-->
+                    <attribute name="colors">blue:state == 'draft';red:state == 'invoiced';gray:state in ('done','cancel');black:state not in('done','cancel')</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--<record id="marcos_invoice_tree" model="ir.ui.view">-->
+            <!--<field name="name">marcos_account.invoice.tree</field>-->
+            <!--<field name="model">account.invoice</field>-->
+            <!--<field name="inherit_id" ref="account.invoice_tree"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr='//tree[@string="Invoice"]' position='attributes'>-->
+                    <!--<attribute name="create">false</attribute>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.ui.view" id="account_invoice_form">-->
+            <!--<field name="name">marcos account.invoice.form</field>-->
+            <!--<field name="model">account.invoice</field>-->
+            <!--<field name="inherit_id" ref="account_voucher.view_invoice_customer"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr='//form[@string="Invoice"]' position='attributes'>-->
+                    <!--<attribute name="create">false</attribute>-->
+                    <!--&lt;!&ndash;<attribute name="edit">false</attribute>&ndash;&gt;-->
+                <!--</xpath>-->
+                <!--<xpath expr="//button[@string='Cancel Invoice']" position="replace"/>-->
+                <!--<xpath expr="//button[@string='Refund Invoice']" position="replace"/>-->
+                <!--<xpath expr="//button[@string='Register Payment']" position="replace">-->
+                    <!--<button name="invoice_pay_customer" type="object" string="Register Payment"-->
+                        <!--attrs="{'invisible': ['|', ('state','!=','open'), ('sent','=',True)]}" groups="base.group_user"/>-->
+                    <!--<button name="invoice_pay_customer" type="object" string="Register Payment"-->
+                        <!--attrs="{'invisible': ['|', ('state','!=','open'), ('sent','=',False)]}" class="oe_highlight" groups="base.group_user"/>-->
+                <!--</xpath>-->
+            <!--</field>-->
+         <!--</record>-->
+
+        <!--To remove go to my openerp account-->
+
+        <record id="mail.ir_cron_module_update_notification" model="ir.cron">
+            <field name="name">Update Notification</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall" />
+            <field eval="'publisher_warranty.contract'" name="model" />
+            <field eval="'update_notification'" name="function" />
+            <field eval="'(None,)'" name="args" />
+            <field name="priority">1000</field>
+        </record>
+
+        <menuitem id="base.menu_module_tree" parent="base.menu_management" name="Installed Modules" sequence="10" action="base.open_module_tree" />
+        <menuitem id="base.module_mi" parent="base.menu_management" sequence="100" action="base.modules_act_cl"/>
+
+    </data>
+</openerp>

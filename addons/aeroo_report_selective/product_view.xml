@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_normal_form_view_inherit" model="ir.ui.view">
+            <field name="name">Product form view inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+
+                <notebook position="inside">
+
+                    <page string="Aeroo">
+                        <group>
+                            <field name="aeroo_template_id" />
+                        </group>
+                    </page>
+
+                </notebook>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>
